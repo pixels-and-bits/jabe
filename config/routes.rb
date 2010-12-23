@@ -1,4 +1,12 @@
 Bloggy::Application.routes.draw do
+  
+  namespace :admin do
+    root :to => 'base#index'
+  end # namespace : admin
+  
+
+  devise_for :admin
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
