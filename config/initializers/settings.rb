@@ -1,0 +1,1 @@
+SETTINGS = Settings.first || Settings.create

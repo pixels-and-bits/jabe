@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101223012847) do
+ActiveRecord::Schema.define(:version => 20101223020354) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -30,5 +30,17 @@ ActiveRecord::Schema.define(:version => 20101223012847) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
+
+  create_table "settings", :force => true do |t|
+    t.string   "site_url"
+    t.string   "host_name"
+    t.string   "mail_from"
+    t.string   "site_name"
+    t.string   "tagline"
+    t.string   "google_tracker_id"
+    t.boolean  "blackbird_enabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.3'
 gem 'devise'
 gem 'friendly_id', '3.1.8'
+gem 'formtastic', '>= 1.2.3.beta'
 gem 'haml', '>= 3.0.23'
 gem 'haml-rails'
 gem 'jquery-rails'
@@ -11,8 +12,8 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 group :test do
   gem 'autotest'
-  gem 'autotest-fsevent'
-  gem 'autotest-growl'
+  gem 'autotest-fsevent' if RUBY_PLATFORM =~ /darwin/
+  gem 'autotest-growl' if RUBY_PLATFORM =~ /darwin/
   gem 'capybara'
   gem 'cucumber'
   gem 'cucumber-rails'

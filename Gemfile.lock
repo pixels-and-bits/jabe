@@ -70,6 +70,10 @@ GEM
       abstract (>= 1.0.0)
     ffi (0.6.3)
       rake (>= 0.8.7)
+    formtastic (1.2.3.beta)
+      actionpack (>= 2.3.7)
+      activesupport (>= 2.3.7)
+      i18n (>= 0.4.0)
     friendly_id (3.1.8)
       babosa (~> 0.2.0)
     gherkin (2.3.2)
@@ -176,6 +180,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner (>= 0.6.0)
   devise
+  formtastic (>= 1.2.3.beta)
   friendly_id (= 3.1.8)
   haml (>= 3.0.23)
   haml-rails

@@ -9,7 +9,7 @@
   %head
     %meta{:charset => "utf-8"}/
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
-    %title= SETTINGS.site_name
+    %title= "#{SETTINGS.site_name} Admin"
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
@@ -21,11 +21,11 @@
   %body
     #container
       %header
-        = render 'layouts/header'
+        = render 'layouts/admin_header'
       #main
         = yield
       %footer
-        = render 'layouts/footer'
+        = render 'layouts/admin_footer'
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"}
     :javascript
       !window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery-min.js"%3E%3C/script%3E'))

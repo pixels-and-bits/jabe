@@ -1,11 +1,11 @@
 Bloggy::Application.routes.draw do
-  
+
   root :to => "home#index"
 
   namespace :admin do
     root :to => 'base#index'
-  end # namespace : admin
-  
+    resource :settings
+  end
 
   devise_for :admin, :path_names => { :sign_in => 'login', :sign_out => 'logout' }
 
