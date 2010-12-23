@@ -24,3 +24,11 @@ Bloggy::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 end
 
+
+if defined?(PhusionPassenger)
+  if File.exists?(Rails.root.join('tmp', 'debug.txt'))
+    require 'ruby-debug'
+    Debugger.wait_connection = true
+    Debugger.start_remote
+  end
+end
