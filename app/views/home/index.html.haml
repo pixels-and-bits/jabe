@@ -1,2 +1,10 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+%table
+  %tr
+    %th Title
+    %th Body
+
+  - @entries.each do |entry|
+    %tr
+      %td= link_to entry.title, entry_path(entry)
+      %td= entry.body
+%br

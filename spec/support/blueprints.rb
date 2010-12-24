@@ -1,12 +1,10 @@
 require 'machinist/active_record'
 
-# Add your blueprints here.
-#
-# e.g.
-#   Post.blueprint do
-#     title { "Post #{sn}" }
-#     body  { "Lorem ipsum..." }
-#   end
+# takes care of
+# Validation failed: Email has already been taken (ActiveRecord::RecordInvalid)
+Machinist.configure do |config|
+  config.cache_objects = false
+end
 
 Admin.blueprint do
   email { 'admin@example.com' }
@@ -15,5 +13,9 @@ Admin.blueprint do
 end
 
 Settings.blueprint do
+  # Attributes here
+end
+
+Entry.blueprint do
   # Attributes here
 end

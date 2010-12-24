@@ -1,0 +1,45 @@
+%h1 Draft Entries
+
+%table
+  %tr
+    %th Title
+    %th Body
+    %th Draft
+    %th
+    %th
+    %th
+
+  - @drafts.each do |entry|
+    %tr
+      %td= link_to entry.title, edit_admin_entry_path(entry)
+      %td= entry.body
+      %td= entry.draft
+      %td= link_to 'Show', entry
+      %td= link_to 'Edit', edit_entry_path(entry)
+      %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+%h1 Published Entries
+
+%table
+  %tr
+    %th Title
+    %th Body
+    %th Draft
+    %th
+    %th
+    %th
+
+  - @published.each do |entry|
+    %tr
+      %td= link_to entry.title, edit_admin_entry_path(entry)
+      %td= entry.body
+      %td= entry.draft
+      %td= link_to 'Show', entry
+      %td= link_to 'Edit', edit_entry_path(entry)
+      %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Entry', new_admin_entry_path
