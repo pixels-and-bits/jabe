@@ -8,7 +8,7 @@ gem 'haml', '>= 3.0.23'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'sass', '>= 3.1.0.alpha.206'
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'mysql'
 
 group :development, :test do
   gem 'autotest'
