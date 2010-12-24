@@ -2,14 +2,14 @@
 
 %p
   %b Title:
-  = @entry.title
+  = entry.title
 %p
   %b Body:
-  = @entry.body
+  = entry.body
 %p
   %b Draft:
-  = @entry.draft
+  = entry.draft
 
-= link_to 'Edit', edit_entry_path(@entry)
+= link_to 'Edit', edit_admin_entry_path(entry)
 \|
 = link_to 'Back', entries_path
