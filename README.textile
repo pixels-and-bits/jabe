@@ -6,7 +6,7 @@ Bloggy is a bare bones blogging engine that is ultimately intended to be install
 
 h2. Basic TODOs
 
- * Comments
- * Comment notifications
- * SPAM prevention
- * News feed
+  * Authors
+  * Comment notifications
+  * SPAM prevention
+  * News feed
