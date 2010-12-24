@@ -1,3 +1,7 @@
+Given /^a published entry$/ do
+  Entry.make!(:published)
+end
+
 Then /^the entry should be a draft$/ do
   entry = @entry || Entry.last
   entry.draft.should be_true

@@ -11,7 +11,7 @@ class Admin::EntriesController < Admin::BaseController
     if entry = Entry.create(params[:entry])
       redirect_to([:admin, entry], :notice => 'Entry was successfully created.')
     else
-      render :action => "new"
+      render :new
     end
   end
 
@@ -19,19 +19,21 @@ class Admin::EntriesController < Admin::BaseController
     if entry.update_attributes(params[:entry])
       redirect_to([:admin, entry], :notice => 'Entry was successfully updated.')
     else
-      render :action => "edit"
+      render :edit
     end
   end
 
   def destroy
     entry.destroy
-    redirect_to(admin_entries_url)
+    redirect_to admin_entries_path
   end
 
   private
 
     def entry
-      @entry ||= params[:id].blank? ? Entry.new : Entry.find(params[:id])
+      @entry ||= params[:id].blank? ?
+        Entry.new :
+        Entry.find(params[:id])
     end
 
     def set_is_draft

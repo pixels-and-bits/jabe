@@ -1,0 +1,12 @@
+.title= entry.title
+.body= entry.body
+
+.comments
+  %h3 Comments
+  %ul
+    - entry.comments.each do |comment|
+      %li
+        .name= comment.name
+        .body= comment.body
+
+  = render 'comment_form'

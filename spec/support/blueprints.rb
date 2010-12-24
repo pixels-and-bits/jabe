@@ -17,5 +17,14 @@ Settings.blueprint do
 end
 
 Entry.blueprint do
+  title { Faker::Lorem.words.to_s }
+  body { Faker::Lorem.paragraph }
+end
+
+Entry.blueprint(:published) do
+  draft { false }
+end
+
+Comment.blueprint do
   # Attributes here
 end

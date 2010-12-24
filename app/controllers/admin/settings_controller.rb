@@ -4,7 +4,7 @@ class Admin::SettingsController < Admin::BaseController
     if SETTINGS.update_attributes(params[:settings])
       redirect_to admin_root_path, :notice => 'Settings updated'
     else
-      render :action => :edit
+      render :edit
     end
   end
 end
