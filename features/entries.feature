@@ -9,6 +9,5 @@ Feature: Interacting with entries
     And I fill in "comment_email" with "michael@example.com"
     And I fill in "comment_body" with "Cool post"
     And I press "Submit comment"
-    And show me the page
     Then I should see "Michael"
     And I should see "Cool post"
