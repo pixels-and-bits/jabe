@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'sass', '>= 3.1.0.alpha.206'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-group :test do
+group :development, :test do
   gem 'autotest'
   gem 'autotest-fsevent' if RUBY_PLATFORM =~ /darwin/
   gem 'autotest-growl' if RUBY_PLATFORM =~ /darwin/
@@ -18,6 +18,7 @@ group :test do
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'database_cleaner', '>= 0.6.0'
+  gem 'faker'
   gem 'launchy'
   gem 'machinist', '>= 2.0.0.beta2'
   gem 'pickle'
