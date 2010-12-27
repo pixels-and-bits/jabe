@@ -15,16 +15,21 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
     %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}/
-    = stylesheet_link_tag 'style'
+    = stylesheet_link_tag 'style', 'grid', 'application'
     = formtastic_stylesheet_link_tag
     = javascript_include_tag 'libs/modernizr-1.6.min.js'
   %body
-    #container
-      %header
+    #container.container_12
+      %header.grid_12
         = render 'layouts/header'
-      #main
-        = yield
-      %footer
+      / %nav.grid_12
+      /   nav goes here
+      #main.grid_12
+        #content.grid_9
+          = yield
+        #sidebar.grid_2
+          = render 'layouts/sidebar'
+      %footer.grid_12
         = render 'layouts/footer'
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"}
     :javascript

@@ -19,6 +19,7 @@ end
 Entry.blueprint do
   title { Faker::Lorem.words.to_s }
   body { Faker::Lorem.paragraph }
+  published_at { Time.now }
 end
 
 Entry.blueprint(:published) do

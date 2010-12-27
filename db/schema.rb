@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101226201023) do
+ActiveRecord::Schema.define(:version => 20101227224228) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20101226201023) do
     t.boolean  "blackbird_enabled"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "entries_per_page"
   end
 
   create_table "slugs", :force => true do |t|

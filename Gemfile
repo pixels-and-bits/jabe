@@ -7,8 +7,10 @@ gem 'formtastic', '>= 1.2.3.beta'
 gem 'haml', '>= 3.0.23'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'RedCloth'
 gem 'sass', '>= 3.1.0.alpha.206'
 gem 'mysql'
+gem 'will_paginate',  ">= 3.0.pre2"
 
 group :development, :test do
   gem 'autotest'

@@ -1,12 +1,24 @@
-.title= entry.title
-.body= entry.body
-
-.comments
-  %h3 Comments
-  %ul
-    - entry.comments.each do |comment|
-      %li
-        .name= comment.name
-        .body= comment.body
-
-  = render 'comment_form'
+#entries.grid_8
+  .entry.last
+    .title
+      = entry.title
+    .date
+      = entry.published_at.to_s(:long)
+    .content
+      = entry.body.html_safe
+    #comments
+      %h2 Comments
+      - entry.comments.each do |comment|
+        .author
+          = comment.name
+          %span.when
+            = comment.created_at.to_s(:long)
+        .comment
+          = comment.body
+      #new_comment
+        %h2 Add a comment
+        = semantic_form_for [entry, entry.comments.new] do |form|
+          = form.input :name
+          = form.input :email
+          = form.input :body
+          = form.submit 'Add comment'

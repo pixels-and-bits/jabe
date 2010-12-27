@@ -1,0 +1,106 @@
+@import "will_paginate";
+
+.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12 {
+  background-color:#eee;
+}
+
+body {
+  background-color:#AAA;
+}
+
+header {
+  border-bottom:solid 1px black;
+  padding-bottom:10px;
+  color:#eee;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.50, rgb(88,142,222)),
+    color-stop(1, rgb(150,206,255))
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(88,142,222) 50%,
+    rgb(150,206,255) 100%
+  );
+}
+
+h1#site-title {
+  font-size:2.5em;
+  padding:10px 20px 5px;
+}
+
+h1#site-tagline {
+  font-size:1.5em;
+  padding:10px 20px 10px;
+}
+
+#main {
+  padding-top:20px
+}
+
+.entry {
+  padding:20px 0;
+  border-bottom:solid 1px #333;
+
+  .title {
+    font-size:1.5em;
+  }
+
+  .date {
+    font-size:.9em;
+    padding:5px 0;
+  }
+
+  .meta {
+    color:#eee;
+    background-color:#AAA;
+    font-size:.9em;
+    margin-top:10px;
+    padding:10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    a {
+      color:#eee;
+    }
+  }
+}
+
+.last {
+  border-bottom:none;
+}
+
+#site-title a, #site-title a:visited {
+  color:#eee;
+  text-decoration:none;
+}
+
+#comments {
+  padding-top:20px;
+
+  .author {
+    font-weight:bold;
+    padding:10px 0 5px 10px;
+
+    .when {
+      padding-left:10px;
+      font-size:.8em;
+    }
+  }
+
+  .comment {
+    padding:5px 20px;
+  }
+
+  #new_comment {
+    padding-top:20px;
+
+    li {
+      list-style-type: none;
+      list-style-image: none;
+      list-style-position: outside;
+    }
+  }
+}
