@@ -14,6 +14,12 @@ Bloggy::Application.routes.draw do
 
   devise_for :admin, :path_names => { :sign_in => 'login', :sign_out => 'logout' }
 
+  match "/:year/:month/:day/:id" => 'entries#show',
+    :constraints => {
+      :year => /\d{4}/,
+      :month => /\d{1,2}/,
+      :day => /\d{1,2}/
+    }
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

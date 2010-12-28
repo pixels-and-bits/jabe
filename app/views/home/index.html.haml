@@ -2,7 +2,7 @@
   - @entries.each do |entry|
     .entry{ :class => entry == @entries.last ? 'last' : '' }
       .title
-        = link_to entry.title, entry_path(entry)
+        = link_to entry.title, public_entry_path(entry)
       .date
         = entry.published_at.to_s(:long)
       .content
