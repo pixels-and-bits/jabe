@@ -13,7 +13,7 @@ Feature: Site management
     When I follow "Entries"
     And I follow "New Entry"
     And I fill in "entry_title" with "Is this thing on"
-    And I fill in "entry_body" with "Hrm... Who knows"
+    And I fill in "entry_body" with "Hrm, Who knows"
     And I press "Save as draft"
     Then the entry should be a draft
     When I go to the home page

@@ -9,7 +9,7 @@ class Admin::EntriesController < Admin::BaseController
 
   def create
     if entry = Entry.create(params[:entry])
-      redirect_to([:admin, entry], :notice => 'Entry was successfully created.')
+      redirect_to(admin_entries_path, :notice => 'Entry was successfully created.')
     else
       render :new
     end
@@ -17,7 +17,7 @@ class Admin::EntriesController < Admin::BaseController
 
   def update
     if entry.update_attributes(params[:entry])
-      redirect_to([:admin, entry], :notice => 'Entry was successfully updated.')
+      redirect_to(admin_entries_path, :notice => 'Entry was successfully updated.')
     else
       render :edit
     end

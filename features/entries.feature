@@ -8,6 +8,6 @@ Feature: Interacting with entries
     When I fill in "comment_name" with "Michael"
     And I fill in "comment_email" with "michael@example.com"
     And I fill in "comment_body" with "Cool post"
-    And I press "Submit comment"
+    And I press "Add comment"
     Then I should see "Michael"
     And I should see "Cool post"

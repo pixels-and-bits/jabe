@@ -25,6 +25,6 @@ Then /^I should see the entry$/ do
   entry = @entry || Entry.last
   steps %Q{
     And I should see "#{entry.title}"
-    And I should see "#{entry.body}"
+    And I should see "#{entry.body(:source)}"
   }
 end

@@ -6,6 +6,7 @@
       = entry.published_at.to_s(:long)
     .content
       ~ entry.body.html_safe
+    %a{ :name => 'comments' }
     #comments
       %h2 Comments
       - entry.comments.each do |comment|
@@ -18,7 +19,7 @@
             = comment.body
       #new_comment
         %h2 Add a comment
-        = semantic_form_for [entry, entry.comments.new] do |form|
+        = semantic_form_for [entry, comment] do |form|
           = form.input :name
           = form.input :email
           = form.input :body, :label => 'Comment'

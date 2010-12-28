@@ -136,6 +136,8 @@ h1#site-tagline {
   -moz-border-radius: 5px;
   border-radius: 5px;
   border:solid 1px #333;
+  padding: 0 10px !important;
+  overflow: visible;
 }
 
 pre {
@@ -146,4 +148,13 @@ pre {
   border-top:solid #777 2px;
   border-bottom:solid #777 2px;
   overflow-x:auto;
+}
+
+label abbr {
+  color:red;
+  padding:0 3px;
+}
+
+.inline-errors {
+  color:red;
 }

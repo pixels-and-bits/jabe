@@ -8,6 +8,6 @@
       .content
         ~ entry.body.html_safe
       .meta
-        = link_to "Comments: #{entry.comments.count}", entry_path(entry), :anchor => 'comments'
+        = link_to "Comments: #{entry.comments.count}", entry_path(entry, :anchor => 'comments')
   #pagination.apple_pagination
     = will_paginate @entries
