@@ -131,10 +131,11 @@ sup {
 
 pre {
   padding: 15px;
-  white-space: pre;
-  white-space: pre-wrap;
-  white-space: pre-line;
-  word-wrap: break-word; }
+  // white-space: pre;
+  // white-space: pre-wrap;
+  // white-space: pre-line;
+  // word-wrap: break-word;
+}
 
 textarea {
   overflow: auto; }

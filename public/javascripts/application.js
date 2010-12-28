@@ -1,8 +1,6 @@
 $(function() {
   if($('#first-focus').length > 0) {
     $('#first-focus').focus();
-  } else {
-    $("form:not(.filter) :input:visible:enabled:first").focus();
   }
 });
 
