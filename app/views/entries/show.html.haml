@@ -21,6 +21,7 @@
         %h2 Add a comment
         = semantic_form_for [entry, comment] do |form|
           = form.input :name
+          = form.input :nickname
           = form.input :email
           = form.input :body, :label => 'Comment'
           = form.submit 'Add comment', :class => 'button'

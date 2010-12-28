@@ -28,3 +28,8 @@ Then /^I should see the entry$/ do
     And I should see "#{entry.body(:source)}"
   }
 end
+
+Then /^the entry should have (\d+) comments?$/ do |count|
+  entry = @entry || Entry.last
+  entry.comments.count.should eql(count.to_i)
+end
