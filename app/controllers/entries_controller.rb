@@ -19,7 +19,7 @@ class EntriesController < ApplicationController
     def entry
       @entry ||= Entry.find(params[:id])
     end
-    
+
     def comment
       @comment ||= entry.comments.new
     end

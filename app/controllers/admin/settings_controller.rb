@@ -1,5 +1,5 @@
 class Admin::SettingsController < Admin::BaseController
-  
+
   def update
     if SETTINGS.update_attributes(params[:settings])
       Time.zone = SETTINGS.time_zone

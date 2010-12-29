@@ -1,8 +1,8 @@
-h1. Bloggy
+h1. Jabe
 
 h3. What is this?
 
-Bloggy is a bare bones blogging engine that is ultimately intended to be installed as a gem. It will grow as its needs do.
+Jabe is a bare bones blogging engine that is ultimately intended to be installed as a gem. It will grow as its needs do.
 
 h2. Basic TODOs
 
