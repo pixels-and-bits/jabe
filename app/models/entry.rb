@@ -12,6 +12,6 @@ class Entry < ActiveRecord::Base
   private
 
     def set_published_at
-      self.published_at = Time.now unless draft?
+      self.published_at = Time.now unless draft? || self.published_at
     end
 end
