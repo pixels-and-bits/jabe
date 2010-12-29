@@ -12,6 +12,9 @@ module NavigationHelpers
       '/'
     when 'the admin home page'
       admin_root_path
+    when 'the entry page'
+      entry_path(Entry.last)
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

@@ -8,6 +8,12 @@ class EntriesController < ApplicationController
     )
   end
 
+  def show
+    if entry.draft? && ! admin_signed_in?
+      render 'public/404.html', :layout => false, :status => 404
+    end
+  end
+
   private
 
     def entry

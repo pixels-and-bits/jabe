@@ -18,7 +18,11 @@ Feature: Site management
     Then the entry should be a draft
     When I go to the home page
     Then I should not see the entry
-    When I go to the admin home page
+    When I follow "Logout"
+    And I go to the entry page
+    Then the response should be a 404
+    Given a logged in admin
+    And I go to the admin home page
     And I follow "Entries"
     And I follow the title of the entry
     And I press "Publish"

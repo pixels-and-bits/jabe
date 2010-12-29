@@ -1,5 +1,5 @@
 Given /^a logged in admin$/ do
-  @admin = Admin.make!
+  @admin ||= Admin.make!
   steps %Q{
     When I go to the admin home page
     And I fill in "admin_email" with "admin@example.com"
