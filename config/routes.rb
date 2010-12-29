@@ -1,13 +1,13 @@
 Bloggy::Application.routes.draw do
 
-  root :to => "home#index"
+  root :to => "entries#index"
 
   resources :entries do
     resources :comments
   end
 
   namespace :admin do
-    root :to => 'base#index'
+    root :to => 'entries#index'
     resource :settings
     resources :entries
   end
