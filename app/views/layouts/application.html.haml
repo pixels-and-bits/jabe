@@ -22,8 +22,11 @@
     #container.container_12
       %header.grid_12
         = render 'layouts/header'
-      / %nav.grid_12
-      /   nav goes here
+      - if admin_signed_in?
+        %nav.grid_12.nav.admin
+          %ul
+            %li= link_to 'Entries', admin_entries_path
+            %li= link_to 'Settings', edit_admin_settings_path
       #main.grid_12
         #content.grid_9
           = yield

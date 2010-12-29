@@ -11,7 +11,7 @@ Feature: Site management
 
   Scenario: An admin wants to add a new entry as a draft, then publish
     When I follow "Entries"
-    And I follow "New Entry"
+    And I follow "Start a new entry"
     And I fill in "entry_title" with "Is this thing on"
     And I fill in "entry_body" with "Hrm, Who knows"
     And I press "Save as draft"

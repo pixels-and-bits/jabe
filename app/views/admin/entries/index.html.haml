@@ -1,45 +1,43 @@
-%h1 Draft Entries
+%p
+  = link_to 'Start a new entry', new_admin_entry_path
+%br
 
-%table
-  %tr
-    %th Title
-    %th Body
-    %th Draft
-    %th
-    %th
-    %th
+%h2 Drafts
 
-  - @drafts.each do |entry|
-    %tr
-      %td= link_to entry.title, edit_admin_entry_path(entry)
-      %td= entry.body
-      %td= entry.draft
-      %td= link_to 'Show', entry
-      %td= link_to 'Edit', edit_entry_path(entry)
-      %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
+- if @drafts.any?
+  %table.entries
+    - @drafts.each do |entry|
+      %tr
+        %td
+          = link_to image_tag('delete_page.png'),
+            admin_entry_path(entry),
+            :confirm => 'Are you sure?',
+            :method => :delete,
+            :title => 'Delete'
+          = link_to image_tag('full_page.png'),
+            entry_path(entry),
+            :title => 'Preview'
+        %td
+          = link_to entry.title, edit_admin_entry_path(entry)
 
 %br
 
-%h1 Published Entries
+%h2 Published
 
-%table
-  %tr
-    %th Title
-    %th Body
-    %th Draft
-    %th
-    %th
-    %th
-
-  - @published.each do |entry|
-    %tr
-      %td= link_to entry.title, edit_admin_entry_path(entry)
-      %td= entry.body
-      %td= entry.draft
-      %td= link_to 'Show', entry
-      %td= link_to 'Edit', edit_entry_path(entry)
-      %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Entry', new_admin_entry_path
+- if @published.any?
+  %table.entries
+    - @published.each do |entry|
+      %tr
+        %td.icons
+          = link_to image_tag('delete_page.png'),
+            admin_entry_path(entry),
+            :confirm => 'Are you sure?',
+            :method => :delete,
+            :title => 'Delete'
+          = link_to image_tag('full_page.png'),
+            public_entry_path(entry),
+            :title => 'Preview'
+        %td
+          = link_to entry.title, edit_admin_entry_path(entry)
+        %td.when
+          = entry.published_at.to_s(:long)
