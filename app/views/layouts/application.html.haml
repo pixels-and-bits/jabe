@@ -27,6 +27,7 @@
           %ul
             %li= link_to 'Entries', admin_entries_path
             %li= link_to 'Settings', edit_admin_settings_path
+            %li= link_to 'Logout', destroy_admin_session_path
       #main.grid_12
         #content.grid_9
           = yield
