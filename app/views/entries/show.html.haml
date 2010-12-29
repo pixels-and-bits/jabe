@@ -6,22 +6,31 @@
       = entry.published_at.to_s(:long)
     .content
       ~ entry.body.html_safe
+
     %a{ :name => 'comments' }
     #comments
       %h2 Comments
-      - entry.comments.each do |comment|
+      - if entry.comments.any?
+        - entry.comments.each do |comment|
+          .comment
+            .author
+              = comment.name
+              %span.when
+                = comment.created_at.to_s(:long)
+            .body
+              = comment.body
+      - else
         .comment
           .author
-            = comment.name
-            %span.when
-              = comment.created_at.to_s(:long)
-          .body
-            = comment.body
+            None yet...
+
+      %a{ :name => 'add-comment' }
       #new_comment
         %h2 Add a comment
         = semantic_form_for [entry, comment] do |form|
           = form.input :name
           = form.input :nickname
-          = form.input :email
+          = form.input :email, :label => 'Email (not shown to the public)'
+          = form.input :url, :label => 'Website'
           = form.input :body, :label => 'Comment'
           = form.submit 'Add comment', :class => 'button'
