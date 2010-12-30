@@ -16,7 +16,6 @@ group :development, :test do
   gem 'autotest-fsevent' if RUBY_PLATFORM =~ /darwin/
   gem 'autotest-growl' if RUBY_PLATFORM =~ /darwin/
   gem 'capybara'
-  gem 'csv-mapper'
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'database_cleaner', '>= 0.6.0'
