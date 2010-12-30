@@ -1,6 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.0.3'
 gem 'devise'
 gem 'friendly_id', '3.1.8'
 gem 'formtastic', '>= 1.2.3.beta'
@@ -12,6 +11,7 @@ gem 'sass', '>= 3.1.0.alpha.206'
 gem 'will_paginate',  ">= 3.0.pre2"
 
 group :development, :test do
+  gem 'rails', '~> 3.0.3'
   gem 'autotest'
   gem 'autotest-fsevent' if RUBY_PLATFORM =~ /darwin/
   gem 'autotest-growl' if RUBY_PLATFORM =~ /darwin/
