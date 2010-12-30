@@ -1,12 +1,9 @@
-require 'rails/generators'
-require 'rails/generators/migration'
-
 module Jabe
   module Generators
     class MigrationsGenerator < Rails::Generators::Base
       include Rails::Generators::Migration
 
-      self.source_root(File.expand_path(JABE_DIR, 'templates', 'migrations')))
+      self.source_root(File.expand_path(File.join(Jabe::Engine.root, 'templates', 'migrations')))
 
       desc "run this generator to create the necessary migrations"
 

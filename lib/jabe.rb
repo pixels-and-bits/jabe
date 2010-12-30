@@ -10,6 +10,9 @@ module Jabe
       app.middleware.use ::ActionDispatch::Static, "#{root}/public"
       ::ActionController::Base.send(:helper, :jabe)
     end
+
+    def self.root
+      JABE_DIR
+    end
   end
 end
-

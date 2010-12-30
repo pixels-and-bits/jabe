@@ -14,3 +14,4 @@ test/dummy/public/javascripts/cache
 test/dummy/public/stylesheets/*.css
 test/dummy/public/stylesheets/cache
 test/dummy/tmp/*
+.sass-cache
