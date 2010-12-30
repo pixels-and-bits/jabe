@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jabe}
-  s.version = "0.5.3"
+  s.version = "0.5.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Moen a.k.a. UnderpantsGnome", "Neil Heinrich"]
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "app/controllers/admin/settings_controller.rb",
     "app/controllers/comments_controller.rb",
     "app/controllers/entries_controller.rb",
+    "app/controllers/feed_controller.rb",
     "app/helpers/jabe_helper.rb",
     "app/models/admin.rb",
     "app/models/comment.rb",
@@ -47,6 +48,7 @@ Gem::Specification.new do |s|
     "app/views/entries/_comment_form.html.haml",
     "app/views/entries/index.html.haml",
     "app/views/entries/show.html.haml",
+    "app/views/feed/index.xml.builder",
     "app/views/layouts/_footer.html.haml",
     "app/views/layouts/_header.html.haml",
     "app/views/layouts/_sidebar.html.haml",
@@ -93,15 +95,6 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Just Another Blog Engine}
   s.test_files = [
-    "features/admin.feature",
-    "features/entries.feature",
-    "features/step_definitions/admin_steps.rb",
-    "features/step_definitions/entry_steps.rb",
-    "features/step_definitions/support_steps.rb",
-    "features/step_definitions/web_steps.rb",
-    "features/support/blueprints.rb",
-    "features/support/env.rb",
-    "features/support/paths.rb",
     "spec/support/blueprints.rb",
     "test/dummy/app/controllers/application_controller.rb",
     "test/dummy/app/helpers/application_helper.rb",
@@ -124,6 +117,15 @@ Gem::Specification.new do |s|
     "test/dummy/db/migrate/20101229224030_create_entries.rb",
     "test/dummy/db/migrate/20101229224031_create_comments.rb",
     "test/dummy/db/schema.rb",
+    "test/dummy/features/step_definitions/admin_steps.rb",
+    "test/dummy/features/step_definitions/entry_steps.rb",
+    "test/dummy/features/step_definitions/support_steps.rb",
+    "test/dummy/features/step_definitions/web_steps.rb",
+    "test/dummy/features/support/blueprints.rb",
+    "test/dummy/features/support/env.rb",
+    "test/dummy/features/support/paths.rb",
+    "test/dummy/spec/spec_helper.rb",
+    "test/dummy/spec/support/blueprints.rb",
     "test/dummy/vendor/plugins/acts_as_textiled/init.rb",
     "test/dummy/vendor/plugins/acts_as_textiled/lib/acts_as_textiled.rb",
     "test/dummy/vendor/plugins/acts_as_textiled/test/fixtures/author.rb",
@@ -154,16 +156,15 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<cucumber>, [">= 0"])
       s.add_development_dependency(%q<cucumber-rails>, [">= 0"])
       s.add_development_dependency(%q<database_cleaner>, [">= 0.6.0"])
-      s.add_development_dependency(%q<faker>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<launchy>, [">= 0"])
       s.add_development_dependency(%q<machinist>, [">= 2.0.0.beta2"])
-      s.add_development_dependency(%q<mysql>, [">= 0"])
       s.add_development_dependency(%q<pickle>, [">= 0"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
       s.add_development_dependency(%q<redgreen>, [">= 0"])
       s.add_development_dependency(%q<rspec-rails>, ["= 2.0.1"])
       s.add_development_dependency(%q<ruby-debug>, [">= 0"])
+      s.add_development_dependency(%q<sqlite3-ruby>, [">= 0"])
       s.add_development_dependency(%q<wirble>, [">= 0"])
     else
       s.add_dependency(%q<devise>, [">= 0"])
@@ -183,16 +184,15 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<cucumber>, [">= 0"])
       s.add_dependency(%q<cucumber-rails>, [">= 0"])
       s.add_dependency(%q<database_cleaner>, [">= 0.6.0"])
-      s.add_dependency(%q<faker>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<launchy>, [">= 0"])
       s.add_dependency(%q<machinist>, [">= 2.0.0.beta2"])
-      s.add_dependency(%q<mysql>, [">= 0"])
       s.add_dependency(%q<pickle>, [">= 0"])
       s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<redgreen>, [">= 0"])
       s.add_dependency(%q<rspec-rails>, ["= 2.0.1"])
       s.add_dependency(%q<ruby-debug>, [">= 0"])
+      s.add_dependency(%q<sqlite3-ruby>, [">= 0"])
       s.add_dependency(%q<wirble>, [">= 0"])
     end
   else
@@ -213,16 +213,15 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<cucumber>, [">= 0"])
     s.add_dependency(%q<cucumber-rails>, [">= 0"])
     s.add_dependency(%q<database_cleaner>, [">= 0.6.0"])
-    s.add_dependency(%q<faker>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<launchy>, [">= 0"])
     s.add_dependency(%q<machinist>, [">= 2.0.0.beta2"])
-    s.add_dependency(%q<mysql>, [">= 0"])
     s.add_dependency(%q<pickle>, [">= 0"])
     s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<redgreen>, [">= 0"])
     s.add_dependency(%q<rspec-rails>, ["= 2.0.1"])
     s.add_dependency(%q<ruby-debug>, [">= 0"])
+    s.add_dependency(%q<sqlite3-ruby>, [">= 0"])
     s.add_dependency(%q<wirble>, [">= 0"])
   end
 end
