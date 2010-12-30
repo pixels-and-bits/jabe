@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jabe}
-  s.version = "0.5.2"
+  s.version = "0.5.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Moen a.k.a. UnderpantsGnome", "Neil Heinrich"]
@@ -151,7 +151,6 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<autotest-fsevent>, [">= 0"])
       s.add_development_dependency(%q<autotest-growl>, [">= 0"])
       s.add_development_dependency(%q<capybara>, [">= 0"])
-      s.add_development_dependency(%q<csv-mapper>, [">= 0"])
       s.add_development_dependency(%q<cucumber>, [">= 0"])
       s.add_development_dependency(%q<cucumber-rails>, [">= 0"])
       s.add_development_dependency(%q<database_cleaner>, [">= 0.6.0"])
@@ -181,7 +180,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<autotest-fsevent>, [">= 0"])
       s.add_dependency(%q<autotest-growl>, [">= 0"])
       s.add_dependency(%q<capybara>, [">= 0"])
-      s.add_dependency(%q<csv-mapper>, [">= 0"])
       s.add_dependency(%q<cucumber>, [">= 0"])
       s.add_dependency(%q<cucumber-rails>, [">= 0"])
       s.add_dependency(%q<database_cleaner>, [">= 0.6.0"])
@@ -212,7 +210,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<autotest-fsevent>, [">= 0"])
     s.add_dependency(%q<autotest-growl>, [">= 0"])
     s.add_dependency(%q<capybara>, [">= 0"])
-    s.add_dependency(%q<csv-mapper>, [">= 0"])
     s.add_dependency(%q<cucumber>, [">= 0"])
     s.add_dependency(%q<cucumber-rails>, [">= 0"])
     s.add_dependency(%q<database_cleaner>, [">= 0.6.0"])
