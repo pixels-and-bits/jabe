@@ -20,6 +20,7 @@ Entry.blueprint do
   title { 'My awesome blog entry' }
   body { 'This is the body of my awesome blog entry' }
   published_at { Time.now }
+  draft { false }
 end
 
 Entry.blueprint(:published) do

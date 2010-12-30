@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root :to => "entries#index"
 
+  match 'feed' => 'feed#index', :format => :xml, :as => 'feed'
+  match 'feed/atom.xml' => 'feed#index'
+
   resources :entries do
     resources :comments
   end

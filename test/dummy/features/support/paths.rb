@@ -14,6 +14,8 @@ module NavigationHelpers
       admin_root_path
     when 'the entry page'
       entry_path(Entry.last)
+    when 'the feed url'
+      feed_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
