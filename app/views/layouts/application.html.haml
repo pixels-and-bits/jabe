@@ -15,6 +15,7 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
     %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}/
+    = auto_discovery_link_tag :atom, feed_path
     = stylesheet_link_tag 'grid', 'boilerplate', 'jabe', 'application'
     = javascript_include_tag 'libs/modernizr-1.6.min.js'
   %body
