@@ -11,7 +11,7 @@ h2. Basic TODOs
 
 h2. Installing
 
-Edit your Gemfile for the required gems
+Edit your Gemfile and add the required gems
   gem 'rails', '~> 3.0.3'
   gem 'devise'
   gem 'friendly_id', '3.1.8'
@@ -21,7 +21,7 @@ Edit your Gemfile for the required gems
   gem 'jquery-rails'
   gem 'RedCloth'
   gem 'sass', '>= 3.1.0.alpha.206'
-  gem 'will_paginate',  ">= 3.0.pre2"
+  gem 'will_paginate', '>= 3.0.pre2'
 
 From your rails root
 
@@ -31,7 +31,7 @@ From your rails root
   * rails g jabe:migrations
   * rake db:migrate
   * rm app/views/layouts/*
-  * rm pub;ic/index.html
+  * rm public/index.html
   * rails c
   * >> Admin.create!(:email => 'you@example.com', :password => 'password', :password_confirmation => 'password')
   * rails s
