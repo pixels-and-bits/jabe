@@ -7,7 +7,6 @@ Jabe is a bare bones blogging engine that is installed as a gem. It will grow as
 h2. Basic TODOs
 
   * Comment notifications
-  * News feed
 
 h2. Installing
 
