@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jabe}
-  s.version = "0.5.0"
+  s.version = "0.5.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Moen a.k.a. UnderpantsGnome", "Neil Heinrich"]
-  s.date = %q{2010-12-29}
+  s.date = %q{2010-12-30}
   s.description = %q{Blog engine for Rails 3+}
   s.email = %q{michael@pixels-and-bits.com}
   s.extra_rdoc_files = [
@@ -34,10 +34,10 @@ Gem::Specification.new do |s|
     "app/models/entry.rb",
     "app/models/settings.rb",
     "app/stylesheets/_will_paginate.scss",
-    "app/stylesheets/application.scss",
+    "app/stylesheets/boilerplate.scss",
     "app/stylesheets/grid.scss",
     "app/stylesheets/handheld.scss",
-    "app/stylesheets/style.scss",
+    "app/stylesheets/jabe.scss",
     "app/views/admin/entries/_form.html.haml",
     "app/views/admin/entries/edit.html.haml",
     "app/views/admin/entries/index.html.haml",
@@ -65,6 +65,7 @@ Gem::Specification.new do |s|
     "features/support/env.rb",
     "features/support/paths.rb",
     "lib/generators/jabe/migrations/migrations_generator.rb",
+    "lib/generators/jabe/stylesheets/stylesheets_generator.rb",
     "lib/generators/jabe/templates/migrations/create_comments.rb",
     "lib/generators/jabe/templates/migrations/create_entries.rb",
     "lib/generators/jabe/templates/migrations/create_settings.rb",
