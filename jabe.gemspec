@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
     "app/controllers/admin/settings_controller.rb",
     "app/controllers/comments_controller.rb",
     "app/controllers/entries_controller.rb",
-    "app/helpers/application_helper.rb",
+    "app/helpers/jabe_helper.rb",
     "app/models/admin.rb",
     "app/models/comment.rb",
     "app/models/entry.rb",
@@ -164,7 +164,6 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<redgreen>, [">= 0"])
       s.add_development_dependency(%q<rspec-rails>, ["= 2.0.1"])
       s.add_development_dependency(%q<ruby-debug>, [">= 0"])
-      s.add_development_dependency(%q<sqlite3-ruby>, [">= 0"])
       s.add_development_dependency(%q<wirble>, [">= 0"])
     else
       s.add_dependency(%q<rails>, ["~> 3.0.3"])
@@ -195,7 +194,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<redgreen>, [">= 0"])
       s.add_dependency(%q<rspec-rails>, ["= 2.0.1"])
       s.add_dependency(%q<ruby-debug>, [">= 0"])
-      s.add_dependency(%q<sqlite3-ruby>, [">= 0"])
       s.add_dependency(%q<wirble>, [">= 0"])
     end
   else
@@ -227,7 +225,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<redgreen>, [">= 0"])
     s.add_dependency(%q<rspec-rails>, ["= 2.0.1"])
     s.add_dependency(%q<ruby-debug>, [">= 0"])
-    s.add_dependency(%q<sqlite3-ruby>, [">= 0"])
     s.add_dependency(%q<wirble>, [">= 0"])
   end
 end
