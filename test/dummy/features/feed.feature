@@ -6,4 +6,3 @@ Feature: I want to publish an ATOM feed
   Scenario: A user requests the ATOM feed
     When I go to the feed url
     Then I should see the entries in the feed
-And show me the page
