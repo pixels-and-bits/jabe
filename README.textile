@@ -1,12 +1,39 @@
-h1. Jabe
+h1. Just Another Blog Engine
 
 h3. What is this?
 
-Jabe is a bare bones blogging engine that is ultimately intended to be installed as a gem. It will grow as its needs do.
+Jabe is a bare bones blogging engine that is installed as a gem. It will grow as its needs do.
 
 h2. Basic TODOs
 
-  * Authors
   * Comment notifications
-  * SPAM prevention
   * News feed
+
+h2. Installing
+
+Edit your Gemfile for the required gems
+  gem 'rails', '~> 3.0.3'
+  gem 'devise'
+  gem 'friendly_id', '3.1.8'
+  gem 'formtastic', '>= 1.2.3.beta'
+  gem 'haml', '>= 3.0.23'
+  gem 'haml-rails'
+  gem 'jquery-rails'
+  gem 'RedCloth'
+  gem 'sass', '>= 3.1.0.alpha.206'
+  gem 'will_paginate',  ">= 3.0.pre2"
+
+From your rails root
+
+  * bundle install
+  * rails plugin install http://github.com/defunkt/acts_as_textiled.git
+  * rails g devise:install
+  * rails g jabe:migrations
+  * rake db:migrate
+  * rm app/views/layouts/*
+  * rm pub;ic/index.html
+  * rails c
+  * >> Admin.create!(:email => 'you@example.com', :password => 'password', :password_confirmation => 'password')
+  * rails s
+  * login
+  * edit settings
