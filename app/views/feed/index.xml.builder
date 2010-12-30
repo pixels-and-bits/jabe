@@ -6,7 +6,11 @@ atom_feed do |feed|
   @entries.each do |post|
     feed.entry(post) do |entry|
       entry.title h post.title
-      entry.body strip_tags post.body
+      entry.content post.body, :type => 'html'
+
+      entry.author do |author|
+        author.name(SETTINGS.site_name)
+      end
     end
   end
 end

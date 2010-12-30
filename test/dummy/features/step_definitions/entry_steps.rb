@@ -49,6 +49,6 @@ Then /^I should see the entries in the feed$/ do
     :per_page => (SETTINGS.entries_per_page || 5)
   ).each_with_index do |entry, idx|
     entries[idx].css('title').text.should eql(entry.title)
-    entries[idx].css('body').text.should eql(entry.body(:source))
+    entries[idx].css('content').text.should eql(entry.body)
   end
 end
