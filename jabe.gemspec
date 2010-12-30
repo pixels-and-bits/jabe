@@ -55,15 +55,6 @@ Gem::Specification.new do |s|
     "config/initializers/settings.rb",
     "config/initializers/time_formats.rb",
     "config/routes.rb",
-    "features/admin.feature",
-    "features/entries.feature",
-    "features/step_definitions/admin_steps.rb",
-    "features/step_definitions/entry_steps.rb",
-    "features/step_definitions/support_steps.rb",
-    "features/step_definitions/web_steps.rb",
-    "features/support/blueprints.rb",
-    "features/support/env.rb",
-    "features/support/paths.rb",
     "lib/generators/jabe/migrations/migrations_generator.rb",
     "lib/generators/jabe/stylesheets/stylesheets_generator.rb",
     "lib/generators/jabe/templates/migrations/create_comments.rb",
@@ -102,6 +93,15 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Just Another Blog Engine}
   s.test_files = [
+    "features/admin.feature",
+    "features/entries.feature",
+    "features/step_definitions/admin_steps.rb",
+    "features/step_definitions/entry_steps.rb",
+    "features/step_definitions/support_steps.rb",
+    "features/step_definitions/web_steps.rb",
+    "features/support/blueprints.rb",
+    "features/support/env.rb",
+    "features/support/paths.rb",
     "spec/support/blueprints.rb",
     "test/dummy/app/controllers/application_controller.rb",
     "test/dummy/app/helpers/application_helper.rb",
@@ -137,7 +137,6 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, ["~> 3.0.3"])
       s.add_runtime_dependency(%q<devise>, [">= 0"])
       s.add_runtime_dependency(%q<friendly_id>, ["= 3.1.8"])
       s.add_runtime_dependency(%q<formtastic>, [">= 1.2.3.beta"])
@@ -147,6 +146,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<RedCloth>, [">= 0"])
       s.add_runtime_dependency(%q<sass>, [">= 3.1.0.alpha.206"])
       s.add_runtime_dependency(%q<will_paginate>, [">= 3.0.pre2"])
+      s.add_development_dependency(%q<rails>, ["~> 3.0.3"])
       s.add_development_dependency(%q<autotest>, [">= 0"])
       s.add_development_dependency(%q<autotest-fsevent>, [">= 0"])
       s.add_development_dependency(%q<autotest-growl>, [">= 0"])
@@ -167,7 +167,6 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<ruby-debug>, [">= 0"])
       s.add_development_dependency(%q<wirble>, [">= 0"])
     else
-      s.add_dependency(%q<rails>, ["~> 3.0.3"])
       s.add_dependency(%q<devise>, [">= 0"])
       s.add_dependency(%q<friendly_id>, ["= 3.1.8"])
       s.add_dependency(%q<formtastic>, [">= 1.2.3.beta"])
@@ -177,6 +176,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<RedCloth>, [">= 0"])
       s.add_dependency(%q<sass>, [">= 3.1.0.alpha.206"])
       s.add_dependency(%q<will_paginate>, [">= 3.0.pre2"])
+      s.add_dependency(%q<rails>, ["~> 3.0.3"])
       s.add_dependency(%q<autotest>, [">= 0"])
       s.add_dependency(%q<autotest-fsevent>, [">= 0"])
       s.add_dependency(%q<autotest-growl>, [">= 0"])
@@ -198,7 +198,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<wirble>, [">= 0"])
     end
   else
-    s.add_dependency(%q<rails>, ["~> 3.0.3"])
     s.add_dependency(%q<devise>, [">= 0"])
     s.add_dependency(%q<friendly_id>, ["= 3.1.8"])
     s.add_dependency(%q<formtastic>, [">= 1.2.3.beta"])
@@ -208,6 +207,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<RedCloth>, [">= 0"])
     s.add_dependency(%q<sass>, [">= 3.1.0.alpha.206"])
     s.add_dependency(%q<will_paginate>, [">= 3.0.pre2"])
+    s.add_dependency(%q<rails>, ["~> 3.0.3"])
     s.add_dependency(%q<autotest>, [">= 0"])
     s.add_dependency(%q<autotest-fsevent>, [">= 0"])
     s.add_dependency(%q<autotest-growl>, [">= 0"])

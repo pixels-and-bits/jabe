@@ -21,6 +21,8 @@ Jeweler::Tasks.new do |gem|
   gem.authors = ['Michael Moen a.k.a. UnderpantsGnome', 'Neil Heinrich']
   gem.files.exclude 'test/dummy'
   gem.files.exclude 'spec'
+  gem.files.exclude 'features'
+  gem.test_files += Dir.glob('features/**/*')
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
