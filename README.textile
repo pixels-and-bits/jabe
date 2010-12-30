@@ -45,7 +45,7 @@ h2. Deploying on Heroku
 
 There are a couple changes you need to make to deploy on Heroku.
 
-  * In produciton.rb set config.serve_static_assets = true
+  * In produciton.rb set <code>config.serve_static_assets = true</code>
   * Add an initializer for Sass config/initializers/zz-sass.rb
     <code>Sass::Plugin.options[:never_update] = true</code>
   * Generate the stylesheets
