@@ -12,28 +12,40 @@ h2. Basic TODOs
 h2. Installing
 
 Edit your Gemfile and add the required gems
-  gem 'rails', '~> 3.0.3'
-  gem 'devise'
-  gem 'friendly_id', '3.1.8'
-  gem 'formtastic', '>= 1.2.3.beta'
-  gem 'haml', '>= 3.0.23'
-  gem 'haml-rails'
-  gem 'jquery-rails'
-  gem 'RedCloth'
-  gem 'sass', '>= 3.1.0.alpha.206'
-  gem 'will_paginate', '>= 3.0.pre2'
+
+<pre><code>gem 'devise'
+gem 'friendly_id', '3.1.8'
+gem 'formtastic', '>= 1.2.3.beta'
+gem 'haml', '>= 3.0.23'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'RedCloth'
+gem 'sass', '>= 3.1.0.alpha.206'
+gem 'will_paginate', '>= 3.0.pre2'
+</code></pre>
 
 From your rails root
 
-  * bundle install
-  * rails plugin install http://github.com/defunkt/acts_as_textiled.git
-  * rails g devise:install
-  * rails g jabe:migrations
-  * rake db:migrate
-  * rm app/views/layouts/*
-  * rm public/index.html
-  * rails c
-  * >> Admin.create!(:email => 'you@example.com', :password => 'password', :password_confirmation => 'password')
-  * rails s
-  * login
-  * edit settings
+<pre><code>bundle install
+rails plugin install http://github.com/defunkt/acts_as_textiled.git
+rails g devise:install
+rails g jabe:migrations
+rake db:migrate
+rm app/views/layouts/*
+rm public/index.html
+rails c
+>> Admin.create!(:email => 'you@example.com', :password => 'password', :password_confirmation => 'password')
+rails s
+login
+edit settings
+</code></pre>
+
+h2. Deploying on Heroku
+
+There are a couple changes you need to make to deploy on Heroku.
+
+  * In produciton.rb set config.serve_static_assets = true
+  * Add an initializer for Sass config/initializers/zz-sass.rb
+    <code>Sass::Plugin.options[:never_update] = true</code>
+  * Generate the stylesheets
+    <code>rails g jabe:stylesheets</code>
