@@ -1,5 +1,5 @@
 begin
   SETTINGS = Settings.first || Settings.create
-  Time.zone = SETTINGS.time_zone
+  SETTINGS.do_updates
 rescue ActiveRecord::StatementInvalid
 end
