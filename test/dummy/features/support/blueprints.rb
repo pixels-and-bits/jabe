@@ -13,7 +13,8 @@ Admin.blueprint do
 end
 
 Settings.blueprint do
-  # Attributes here
+  site_name { 'JABE' }
+  site_url { 'http://example.com' }
 end
 
 Entry.blueprint do
@@ -30,3 +31,5 @@ end
 Comment.blueprint do
   # Attributes here
 end
+
+Settings.make!

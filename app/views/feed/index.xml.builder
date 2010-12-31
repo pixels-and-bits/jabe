@@ -4,7 +4,7 @@ atom_feed do |feed|
   feed.updated @entries.first.try(:published_at)
 
   @entries.each do |post|
-    feed.entry(post) do |entry|
+    feed.entry(post, :url => public_entry_url(post)) do |entry|
       entry.title h post.title
       entry.content post.body, :type => 'html'
 
