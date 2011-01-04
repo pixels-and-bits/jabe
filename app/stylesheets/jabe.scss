@@ -136,18 +136,6 @@ h1#site-tagline {
   }
 }
 
-.button {
-  @include gradients;
-  color:#eee;
-  height:30px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  border:solid 1px #333;
-  padding: 0 10px !important;
-  overflow: visible;
-}
-
 pre {
   color:#eee;
   background-color:#222;
@@ -250,6 +238,15 @@ form {
 
   input[type=submit] {
     margin:10px 10px 10px auto !important;
+    @include gradients;
+    color:#eee;
+    height:30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border:solid 1px #333;
+    padding: 0 10px !important;
+    overflow: visible;
   }
 
   input[type=text], input[type=url], input[type=email], input[type=password] {
