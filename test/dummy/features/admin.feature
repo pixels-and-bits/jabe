@@ -28,3 +28,16 @@ Feature: Site management
     And I press "Publish"
     And I go to the home page
     Then I should see the entry
+
+  Scenario: an admin requests a password reset
+    When I follow "Settings"
+    And I fill in "settings_host_name" with "sometestdomain.com"
+    And I press "Save"
+    And I follow "Logout"
+    When I go to the admin home page
+    And I follow "Forgot your password?"
+    And I fill in "admin_email" with "admin@example.com"
+    And I press "Send me reset password instructions"
+    Then "admin@example.com" should receive an email
+    When I open the email
+    Then I should see "sometestdomain.com" in the email body

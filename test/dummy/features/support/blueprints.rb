@@ -1,3 +1,5 @@
+require 'email_spec'
+require 'email_spec/cucumber'
 require 'machinist/active_record'
 
 # takes care of

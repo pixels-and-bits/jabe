@@ -19,6 +19,7 @@ group :development, :test do
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'database_cleaner', '>= 0.6.0'
+  gem 'email_spec'
   gem 'jeweler'
   gem 'launchy'
   gem 'machinist', '>= 2.0.0.beta2'
