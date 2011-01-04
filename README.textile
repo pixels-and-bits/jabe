@@ -50,3 +50,13 @@ There are a couple changes you need to make to deploy on Heroku.
     <code>Sass::Plugin.options[:never_update] = true</code>
   * Generate the stylesheets
     <code>rails g jabe:stylesheets</code>
+
+h2. Development setup
+
+  * fork it
+  * clone it
+  * cd jabe/test/dummy
+  * bundle install
+  * rake
+
+If all the features pass you are good to go.
