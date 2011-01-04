@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jabe}
-  s.version = "0.5.6"
+  s.version = "0.5.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Moen a.k.a. UnderpantsGnome", "Neil Heinrich"]
-  s.date = %q{2010-12-30}
+  s.date = %q{2011-01-03}
   s.description = %q{Blog engine for Rails 3+}
   s.email = %q{michael@pixels-and-bits.com}
   s.extra_rdoc_files = [
@@ -36,7 +36,6 @@ Gem::Specification.new do |s|
     "app/models/settings.rb",
     "app/stylesheets/_will_paginate.scss",
     "app/stylesheets/boilerplate.scss",
-    "app/stylesheets/grid.scss",
     "app/stylesheets/handheld.scss",
     "app/stylesheets/jabe.scss",
     "app/views/admin/entries/_form.html.haml",
@@ -59,6 +58,7 @@ Gem::Specification.new do |s|
     "config/routes.rb",
     "lib/generators/jabe/migrations/migrations_generator.rb",
     "lib/generators/jabe/stylesheets/stylesheets_generator.rb",
+    "lib/generators/jabe/templates/migrations/add_new_settings.rb",
     "lib/generators/jabe/templates/migrations/create_comments.rb",
     "lib/generators/jabe/templates/migrations/create_entries.rb",
     "lib/generators/jabe/templates/migrations/create_settings.rb",
@@ -92,10 +92,9 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/pixels-and-bits/jabe}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.4.0}
   s.summary = %q{Just Another Blog Engine}
   s.test_files = [
-    "spec/support/blueprints.rb",
     "test/dummy/app/controllers/application_controller.rb",
     "test/dummy/app/helpers/application_helper.rb",
     "test/dummy/config/application.rb",
@@ -116,6 +115,7 @@ Gem::Specification.new do |s|
     "test/dummy/db/migrate/20101229224029_devise_create_admins.rb",
     "test/dummy/db/migrate/20101229224030_create_entries.rb",
     "test/dummy/db/migrate/20101229224031_create_comments.rb",
+    "test/dummy/db/migrate/20110104004400_add_new_settings.rb",
     "test/dummy/db/schema.rb",
     "test/dummy/features/step_definitions/admin_steps.rb",
     "test/dummy/features/step_definitions/entry_steps.rb",
@@ -135,7 +135,6 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
@@ -164,6 +163,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<redgreen>, [">= 0"])
       s.add_development_dependency(%q<rspec-rails>, ["= 2.0.1"])
       s.add_development_dependency(%q<ruby-debug>, [">= 0"])
+      s.add_development_dependency(%q<mysql>, [">= 0"])
       s.add_development_dependency(%q<sqlite3-ruby>, [">= 0"])
       s.add_development_dependency(%q<wirble>, [">= 0"])
     else
@@ -192,6 +192,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<redgreen>, [">= 0"])
       s.add_dependency(%q<rspec-rails>, ["= 2.0.1"])
       s.add_dependency(%q<ruby-debug>, [">= 0"])
+      s.add_dependency(%q<mysql>, [">= 0"])
       s.add_dependency(%q<sqlite3-ruby>, [">= 0"])
       s.add_dependency(%q<wirble>, [">= 0"])
     end
@@ -221,6 +222,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<redgreen>, [">= 0"])
     s.add_dependency(%q<rspec-rails>, ["= 2.0.1"])
     s.add_dependency(%q<ruby-debug>, [">= 0"])
+    s.add_dependency(%q<mysql>, [">= 0"])
     s.add_dependency(%q<sqlite3-ruby>, [">= 0"])
     s.add_dependency(%q<wirble>, [">= 0"])
   end
