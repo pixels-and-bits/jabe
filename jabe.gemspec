@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jabe}
-  s.version = "0.5.8"
+  s.version = "0.5.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Moen a.k.a. UnderpantsGnome", "Neil Heinrich"]
@@ -43,7 +43,6 @@ Gem::Specification.new do |s|
     "app/views/admin/entries/index.html.haml",
     "app/views/admin/entries/new.html.haml",
     "app/views/admin/settings/edit.html.haml",
-    "app/views/entries/_comment.html.haml",
     "app/views/entries/_comment_form.html.haml",
     "app/views/entries/index.html.haml",
     "app/views/entries/show.html.haml",
@@ -52,6 +51,7 @@ Gem::Specification.new do |s|
     "app/views/layouts/_header.html.haml",
     "app/views/layouts/_sidebar.html.haml",
     "app/views/layouts/application.html.haml",
+    "config/initializers/gravtastic.rb",
     "config/initializers/sass.rb",
     "config/initializers/settings.rb",
     "config/initializers/time_formats.rb",
@@ -73,6 +73,7 @@ Gem::Specification.new do |s|
     "public/crossdomain.xml",
     "public/images/delete_page.png",
     "public/images/full_page.png",
+    "public/images/gravatar.gif",
     "public/javascripts/application.js",
     "public/javascripts/jquery-ui.js",
     "public/javascripts/jquery-ui.min.js",
@@ -118,6 +119,7 @@ Gem::Specification.new do |s|
     "test/dummy/db/migrate/20110104004400_add_new_settings.rb",
     "test/dummy/db/schema.rb",
     "test/dummy/features/step_definitions/admin_steps.rb",
+    "test/dummy/features/step_definitions/email_steps.rb",
     "test/dummy/features/step_definitions/entry_steps.rb",
     "test/dummy/features/step_definitions/support_steps.rb",
     "test/dummy/features/step_definitions/web_steps.rb",
@@ -155,6 +157,8 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<cucumber>, [">= 0"])
       s.add_development_dependency(%q<cucumber-rails>, [">= 0"])
       s.add_development_dependency(%q<database_cleaner>, [">= 0.6.0"])
+      s.add_development_dependency(%q<email_spec>, [">= 0"])
+      s.add_development_dependency(%q<gravtastic>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<launchy>, [">= 0"])
       s.add_development_dependency(%q<machinist>, [">= 2.0.0.beta2"])
@@ -184,6 +188,8 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<cucumber>, [">= 0"])
       s.add_dependency(%q<cucumber-rails>, [">= 0"])
       s.add_dependency(%q<database_cleaner>, [">= 0.6.0"])
+      s.add_dependency(%q<email_spec>, [">= 0"])
+      s.add_dependency(%q<gravtastic>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<launchy>, [">= 0"])
       s.add_dependency(%q<machinist>, [">= 2.0.0.beta2"])
@@ -214,6 +220,8 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<cucumber>, [">= 0"])
     s.add_dependency(%q<cucumber-rails>, [">= 0"])
     s.add_dependency(%q<database_cleaner>, [">= 0.6.0"])
+    s.add_dependency(%q<email_spec>, [">= 0"])
+    s.add_dependency(%q<gravtastic>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<launchy>, [">= 0"])
     s.add_dependency(%q<machinist>, [">= 2.0.0.beta2"])
