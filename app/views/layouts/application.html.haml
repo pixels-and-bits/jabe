@@ -16,24 +16,24 @@
     %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
     %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}/
     = auto_discovery_link_tag :atom, feed_path
-    = stylesheet_link_tag 'grid', 'boilerplate', 'jabe', 'application'
+    = stylesheet_link_tag 'boilerplate', 'jabe', 'application'
     = javascript_include_tag 'libs/modernizr-1.6.min.js'
   %body
-    #container.container_12
-      %header.grid_12
+    #container
+      %header
         = render 'layouts/header'
       - if admin_signed_in?
-        %nav.grid_12.nav.admin
+        %nav.nav.admin
           %ul
             %li= link_to 'Entries', admin_entries_path
             %li= link_to 'Settings', edit_admin_settings_path
             %li= link_to 'Logout', destroy_admin_session_path
-      #main.grid_12
-        #content.grid_9
+      #main
+        #content
           = yield
-        #sidebar.grid_2
+        #sidebar
           = render 'layouts/sidebar'
-      %footer.grid_12
+      %footer
         = render 'layouts/footer'
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"}
     :javascript
