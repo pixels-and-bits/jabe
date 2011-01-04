@@ -15,6 +15,7 @@ module Jabe
           devise_create_admins.rb
           create_entries.rb
           create_comments.rb
+          add_new_settings.rb
         ).reject { |file|
           existing_migrations.any? { |migration|
             match = migration.match(/#{file}$/)
