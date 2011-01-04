@@ -15,6 +15,7 @@ Edit your Gemfile and add the required gems
 <pre><code>gem 'devise'
 gem 'friendly_id', '3.1.8'
 gem 'formtastic', '>= 1.2.3.beta'
+gem 'gravtastic'
 gem 'haml', '>= 3.0.23'
 gem 'haml-rails'
 gem 'jabe'

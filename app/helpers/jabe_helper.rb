@@ -6,4 +6,8 @@ module JabeHelper
   def public_entry_url(entry)
     "#{SETTINGS.site_url}#{public_entry_path(entry)}"
   end
+  
+  def default_gravatar_url
+    "#{request.protocol}#{request.host_with_port}/images/gravatar.gif"
+  end
 end

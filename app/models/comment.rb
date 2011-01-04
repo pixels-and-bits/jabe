@@ -1,4 +1,9 @@
 class Comment < ActiveRecord::Base
+  if defined?(Gravtastic)
+    include Gravtastic
+    gravtastic :size => 64
+  end
+
   belongs_to :entry
   default_scope :order => 'created_at ASC'
   before_validation :bot_check

@@ -13,6 +13,8 @@
       - if entry.comments.any?
         - entry.comments.each do |comment|
           .comment
+            .gravatar
+              = image_tag comment.gravatar_url(:default => default_gravatar_url)
             .author
               = comment.name
               %span.when

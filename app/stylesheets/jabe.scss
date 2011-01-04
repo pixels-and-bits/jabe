@@ -116,24 +116,44 @@ h1#site-tagline {
 #comments {
   padding-top:20px;
 
-  .author {
-    font-weight:bold;
-    padding:10px 0 5px 10px;
+  .comment {
+    clear:both;
 
-    .when {
-      padding-left:10px;
-      font-size:.8em;
+    .gravatar {
+      margin:10px 10px 10px 0;
+      float:left;
+      width:64px;
+      height:64px;
+      border:solid 5px #588EDE;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+
+      img {
+        width:64px;
+        height:64px;
+      }
     }
-  }
 
-  .body {
-    padding:5px 20px;
-    border-bottom:solid 1px #333;
+    .author {
+      font-weight:bold;
+      padding:10px 0 5px 10px;
+
+      .when {
+        padding-left:10px;
+        font-size:.8em;
+      }
+    }
+
+    .body {
+      min-height:55px;
+      padding:5px 20px;
+      border-bottom:solid 1px #333;
+    }
   }
 
   #new_comment {
     padding-top:20px;
-
   }
 }
 
@@ -147,9 +167,13 @@ pre {
   overflow-x:auto;
 }
 
-label abbr {
-  color:red;
-  padding:0 3px;
+label {
+  padding: 10px 0 5px;
+
+  abbr {
+    color:red;
+    padding:0 3px;
+  }
 }
 
 .inline-errors {
