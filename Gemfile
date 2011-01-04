@@ -27,6 +27,7 @@ group :development, :test do
   gem 'redgreen'
   gem 'rspec-rails', '2.0.1'
   gem 'ruby-debug'
+  gem 'mysql'
   gem 'sqlite3-ruby'
   gem 'wirble'
 end
