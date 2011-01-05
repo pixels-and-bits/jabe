@@ -15,6 +15,7 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
     %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}/
+    = csrf_meta_tag
     = auto_discovery_link_tag :atom, feed_path
     = stylesheet_link_tag 'boilerplate', 'jabe', 'application'
     = javascript_include_tag 'libs/modernizr-1.6.min.js'
@@ -38,8 +39,7 @@
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"}
     :javascript
       !window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery-min.js"%3E%3C/script%3E'))
-    = javascript_include_tag 'plugins'
-    = javascript_include_tag 'application'
+    = javascript_include_tag 'plugins', 'application', 'rails'
     /[if lt IE 7 ]
       <script src="/javascripts/libs/dd_belatedpng.js"></script>
       <script> DD_belatedPNG.fix('img, .png_bg'); </script>

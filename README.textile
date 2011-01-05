@@ -34,6 +34,7 @@ rails g jabe:migrations
 rake db:migrate
 rm app/views/layouts/*
 rm public/index.html
+rm public/javascripts/rails.js
 rails c
 >> Admin.create!(:email => 'you@example.com', :password => 'password', :password_confirmation => 'password')
 rails s
