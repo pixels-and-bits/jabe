@@ -4,12 +4,23 @@ class Comment < ActiveRecord::Base
     gravtastic :size => 64
   end
 
+  attr_accessor :nickname
+
   belongs_to :entry
   default_scope :order => 'created_at ASC'
+
   before_validation :bot_check
   validates_presence_of :name, :email, :body, :message => 'Required'
 
-  attr_accessor :nickname
+  acts_as_textiled :body
+
+  def send_notification(request)
+    begin
+      CommentMailer.notification(self, request).deliver
+    rescue
+      # don't lose comments because of a bad email config
+    end
+  end
 
   private
 

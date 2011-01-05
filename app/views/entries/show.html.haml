@@ -21,7 +21,7 @@
               %span.when
                 = comment.created_at.to_s(:long)
             .body
-              = comment.body
+              = comment.body.html_safe
       - else
         .comment
           .author
@@ -35,5 +35,6 @@
           = form.input :nickname
           = form.input :email, :label => 'Email (not shown to the public)'
           = form.input :url, :label => 'Website'
-          = form.input :body, :label => 'Comment'
+          = form.input :body, :label => 'Comment',
+            :hint => "Textile enabled (#{link_to 'Reference', 'http://redcloth.org/try-redcloth/', :target => '_blank'})".html_safe
           = form.submit 'Add comment'
