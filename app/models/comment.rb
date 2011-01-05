@@ -17,8 +17,8 @@ class Comment < ActiveRecord::Base
   def send_notification(request)
     begin
       CommentMailer.notification(self, request).deliver
-    rescue
-      # don't lose comments because of a bad email config
+    rescue => e
+      logger.error "#{e}\n#{e.backtrace.join("\n")}"
     end
   end
 
