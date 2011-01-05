@@ -47,13 +47,13 @@
       / yui profiler and profileviewer - remove for production
       = javascript_include_tag 'libs/profiling/yahoo-profiling.min.js'
       = javascript_include_tag 'libs/profiling/config.js'
-    / change the UA-XXXXX-X to be your site's ID
-    :javascript
-      var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
-      (function(d, t) {
-       var g = d.createElement(t),
-           s = d.getElementsByTagName(t)[0];
-       g.async = true;
-       g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-       s.parentNode.insertBefore(g, s);
-      })(document, 'script');
+    - unless SETTINGS.google_tracker_id.blank?
+      :javascript
+        var _gaq = [['_setAccount', '#{SETTINGS.google_tracker_id}'], ['_trackPageview']];
+        (function(d, t) {
+         var g = d.createElement(t),
+             s = d.getElementsByTagName(t)[0];
+         g.async = true;
+         g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         s.parentNode.insertBefore(g, s);
+        })(document, 'script');
