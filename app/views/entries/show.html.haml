@@ -3,7 +3,7 @@
     .title
       = entry.title
     .date
-      = entry.published_at.to_s(:long)
+      = entry.published_at.try(:to_s, :long)
     .content
       ~ entry.body.html_safe
 
