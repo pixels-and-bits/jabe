@@ -17,6 +17,7 @@ end
 Settings.blueprint do
   site_name { 'JABE' }
   site_url { 'http://example.com' }
+  mail_from { 'jabe@example.com' }
 end
 
 Entry.blueprint do

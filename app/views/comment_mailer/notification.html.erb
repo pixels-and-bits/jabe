@@ -1,0 +1,19 @@
+<p>
+  From: <%= @comment.name %>
+</p>
+<p>
+  Email: <%= @comment.email %>
+</p>
+<p>
+  URL: <%= @comment.url %>
+</p>
+<p>
+  <%= @comment.body.html_safe %>
+</p>
+<hr>
+<p>
+  Remote IP: <%= @request.remote_ip %>
+</p>
+<p>
+  User agent: <%= @request.user_agent %>
+</p>

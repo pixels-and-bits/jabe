@@ -1,7 +1,8 @@
 Feature: Interacting with entries
 
   Background:
-    Given a published entry
+    Given an admin
+    And a published entry
     When I am on the home page
     And I follow the title of the entry
     Then I should see the entry
@@ -9,11 +10,18 @@ Feature: Interacting with entries
   Scenario: A human submits a comment
     When I fill in "comment_name" with "Michael"
     And I fill in "comment_email" with "michael@example.com"
+    And I fill in "comment_url" with "http://foo.example.com/"
     And I fill in "comment_body" with "Cool post"
     And I press "Add comment"
     Then I should see "Michael"
     And I should see "Cool post"
     And the entry should have 1 comment
+    And "admin@example.com" should receive an email
+    When I open the email
+    Then I should see "Michael" in the email body
+    Then I should see "michael@example.com" in the email body
+    Then I should see "foo.example.com" in the email body
+    Then I should see "Cool post" in the email body
 
   Scenario: A bot submits a comment
     When I fill in "comment_name" with "v1@gr@"

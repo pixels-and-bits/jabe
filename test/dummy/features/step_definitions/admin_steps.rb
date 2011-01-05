@@ -9,6 +9,10 @@ Given /^a logged in admin$/ do
   }
 end
 
+Given /^an admin$/ do
+  @admin ||= Admin.make!
+end
+
 Then /^I should see the settings options$/ do
   pending # express the regexp above with the code you wish you had
 end

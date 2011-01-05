@@ -5,6 +5,7 @@ class CommentsController < Admin::BaseController
 
   def create
     if comment.save
+      comment.send_notification(request)
       redirect_to entry_path(entry), :notice => 'Your comment was submitted'
     else
       render 'entries/show'
