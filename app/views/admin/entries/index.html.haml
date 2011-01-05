@@ -39,5 +39,5 @@
             :title => 'Preview'
         %td
           = link_to entry.title, edit_admin_entry_path(entry)
-        %td.when
-          = entry.published_at.to_s(:long)
+          .when
+            = entry.published_at.to_s(:long)

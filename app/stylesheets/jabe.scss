@@ -72,8 +72,8 @@ h1#site-tagline {
       }
     }
   }
-
 }
+
 .entry {
   margin: 0 0 30px 0;
   padding:0 0 30px 0;
@@ -235,16 +235,17 @@ table.entries {
     font-size:1.1em;
     height:32px;
     line-height:32px;
-    padding:0 10px;
+    padding:0 10px 10px 0;
+
+    .when {
+      font-size:.8em;
+      line-height:1em;
+    }
   }
 
   td.icons {
     width:64px;
     white-space:nowrap;
-  }
-
-  td.when {
-    text-align:right;
   }
 }
 
