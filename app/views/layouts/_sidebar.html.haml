@@ -1,15 +1,15 @@
 %h2
   = SETTINGS.sidebar_heading
 
-- if SETTINGS.github_username
+- unless SETTINGS.github_username.blank?
   .link
     = link_to 'Github', SETTINGS.github_username
 
-- if SETTINGS.twitter_username
+- unless SETTINGS.twitter_username.blank?
   .link
     = link_to 'Twitter', SETTINGS.twitter_username
 
-- if SETTINGS.facebook_url
+- unless SETTINGS.facebook_url.blank?
   .link
     = link_to 'Facebook', SETTINGS.facebook_url
 
