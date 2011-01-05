@@ -12,6 +12,11 @@ class CommentsController < Admin::BaseController
     end
   end
 
+  def destroy
+    comment.destroy
+    redirect_to entry_path(entry), :notice => 'Comment was deleted'
+  end
+
   private
 
     def entry

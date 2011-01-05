@@ -13,6 +13,12 @@
       - if entry.comments.any?
         - entry.comments.each do |comment|
           .comment
+            - if admin_signed_in?
+              .delete
+                = link_to image_tag('delete.png'),
+                  entry_comment_path(entry, comment),
+                  :confirm => 'Are you sure?',
+                  :method => :delete
             - if comment.respond_to?(:gravatar_url)
               .gravatar
                 = image_tag comment.gravatar_url(:default => default_gravatar_url)

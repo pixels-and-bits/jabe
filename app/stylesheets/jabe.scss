@@ -119,6 +119,11 @@ h1#site-tagline {
   .comment {
     clear:both;
 
+    .delete {
+      float:right;
+      padding-top:2px;
+    }
+
     .gravatar {
       margin:10px 10px 10px 0;
       float:left;
