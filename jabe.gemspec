@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Moen a.k.a. UnderpantsGnome", "Neil Heinrich"]
-  s.date = %q{2011-01-03}
+  s.date = %q{2011-01-05}
   s.description = %q{Blog engine for Rails 3+}
   s.email = %q{michael@pixels-and-bits.com}
   s.extra_rdoc_files = [
@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
     "app/controllers/entries_controller.rb",
     "app/controllers/feed_controller.rb",
     "app/helpers/jabe_helper.rb",
+    "app/mailers/comment_mailer.rb",
     "app/models/admin.rb",
     "app/models/comment.rb",
     "app/models/entry.rb",
@@ -43,7 +44,7 @@ Gem::Specification.new do |s|
     "app/views/admin/entries/index.html.haml",
     "app/views/admin/entries/new.html.haml",
     "app/views/admin/settings/edit.html.haml",
-    "app/views/entries/_comment_form.html.haml",
+    "app/views/comment_mailer/notification.html.erb",
     "app/views/entries/index.html.haml",
     "app/views/entries/show.html.haml",
     "app/views/feed/index.xml.builder",
@@ -71,6 +72,7 @@ Gem::Specification.new do |s|
     "public/blackbird/blackbird.js",
     "public/blackbird/blackbird.png",
     "public/crossdomain.xml",
+    "public/images/delete.png",
     "public/images/delete_page.png",
     "public/images/full_page.png",
     "public/images/gravatar.gif",
