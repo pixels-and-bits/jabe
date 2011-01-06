@@ -1,7 +1,10 @@
-#entries.grid_8
+- page_title entry.title
+
+#entries
   .entry.last
     .title
-      = entry.title
+      %h1
+        = entry.title
     .date
       = entry.published_at.try(:to_s, :long)
     .content
