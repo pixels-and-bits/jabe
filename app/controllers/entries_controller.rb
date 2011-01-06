@@ -1,4 +1,7 @@
 class EntriesController < ApplicationController
+  include JabeHelper
+
+  before_filter :ensure_current_post_url, :only => :show
   helper_method :entry, :comment
 
   def index
@@ -23,4 +26,10 @@ class EntriesController < ApplicationController
     def comment
       @comment ||= entry.comments.new
     end
+
+    def ensure_current_post_url
+      redirect_to public_entry_path(entry),
+        :status => :moved_permanently unless entry.friendly_id_status.best?
+    end
+
 end
