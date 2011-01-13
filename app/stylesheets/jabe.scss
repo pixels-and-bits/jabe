@@ -277,6 +277,19 @@ footer {
   clear:both;
 }
 
+.flash-notice, .flash-error {
+  color:green;
+  font-size:1.2em;
+  border:solid 3px green;
+  padding:15px;
+  margin-bottom:10px;
+}
+
+.flash-error {
+  color:red;
+  border-color:red;
+}
+
 form {
   label {
     padding-top:10px;

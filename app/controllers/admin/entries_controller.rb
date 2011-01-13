@@ -8,8 +8,8 @@ class Admin::EntriesController < Admin::BaseController
   end
 
   def create
-    if entry = Entry.create(params[:entry])
-      redirect_to(admin_entries_path, :notice => 'Entry was successfully created.')
+    if entry.save
+      redirect_to(admin_entries_path, :notice => message)
     else
       render :new
     end
@@ -17,7 +17,7 @@ class Admin::EntriesController < Admin::BaseController
 
   def update
     if entry.update_attributes(params[:entry])
-      redirect_to(admin_entries_path, :notice => 'Entry was successfully updated.')
+      redirect_to(admin_entries_path, :notice => message)
     else
       render :edit
     end
@@ -32,11 +32,15 @@ class Admin::EntriesController < Admin::BaseController
 
     def entry
       @entry ||= params[:id].blank? ?
-        Entry.new :
+        Entry.new(params[:entry]) :
         Entry.find(params[:id])
     end
 
     def set_is_draft
       params[:entry][:draft] = (params[:commit] =~ /draft/i).present?
+    end
+
+    def message
+      entry.draft ? "Entry was saved as a draft." : "Entry was published."
     end
 end

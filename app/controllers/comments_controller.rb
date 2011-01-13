@@ -6,15 +6,16 @@ class CommentsController < Admin::BaseController
   def create
     if comment.save
       comment.send_notification(request)
-      redirect_to entry_path(entry), :notice => 'Your comment was submitted'
+      redirect_to entry_path(entry), :notice => 'Your comment was submitted.'
     else
+      flash[:error] = 'Unable to submit your comment.'
       render 'entries/show'
     end
   end
 
   def destroy
     comment.destroy
-    redirect_to entry_path(entry), :notice => 'Comment was deleted'
+    redirect_to entry_path(entry), :notice => 'Comment was deleted.'
   end
 
   private

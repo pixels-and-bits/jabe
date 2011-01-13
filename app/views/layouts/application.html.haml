@@ -33,6 +33,7 @@
             %li= link_to 'Logout', destroy_admin_session_path
       #main
         #content
+          = render 'layouts/flashes'
           = yield
         #sidebar
           = render 'layouts/sidebar'

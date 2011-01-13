@@ -15,6 +15,7 @@ Feature: Interacting with entries
     And I press "Add comment"
     Then I should see "Michael"
     And I should see "Cool post"
+    And I should see "Your comment was submitted"
     And the entry should have 1 comment
     And the page should not contain "Are you sure"
     And "admin@example.com" should receive an email
@@ -35,3 +36,4 @@ Feature: Interacting with entries
     And I fill in "comment_body" with "take the blue pill"
     And I press "Add comment"
     Then the entry should have 0 comments
+    And I should not see "Your comment was submitted"
