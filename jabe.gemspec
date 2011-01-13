@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Moen a.k.a. UnderpantsGnome", "Neil Heinrich"]
-  s.date = %q{2011-01-05}
+  s.date = %q{2011-01-12}
   s.description = %q{Blog engine for Rails 3+}
   s.email = %q{michael@pixels-and-bits.com}
   s.extra_rdoc_files = [
@@ -48,6 +48,7 @@ Gem::Specification.new do |s|
     "app/views/entries/index.html.haml",
     "app/views/entries/show.html.haml",
     "app/views/feed/index.xml.builder",
+    "app/views/layouts/_flashes.html.haml",
     "app/views/layouts/_footer.html.haml",
     "app/views/layouts/_header.html.haml",
     "app/views/layouts/_sidebar.html.haml",
@@ -95,7 +96,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/pixels-and-bits/jabe}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.4.0}
+  s.rubygems_version = %q{1.4.2}
   s.summary = %q{Just Another Blog Engine}
   s.test_files = [
     "test/dummy/app/controllers/application_controller.rb",
@@ -113,12 +114,12 @@ Gem::Specification.new do |s|
     "test/dummy/config/initializers/secret_token.rb",
     "test/dummy/config/initializers/session_store.rb",
     "test/dummy/config/routes.rb",
-    "test/dummy/db/migrate/20101229224027_create_settings.rb",
-    "test/dummy/db/migrate/20101229224028_create_slugs.rb",
-    "test/dummy/db/migrate/20101229224029_devise_create_admins.rb",
-    "test/dummy/db/migrate/20101229224030_create_entries.rb",
-    "test/dummy/db/migrate/20101229224031_create_comments.rb",
-    "test/dummy/db/migrate/20110104004400_add_new_settings.rb",
+    "test/dummy/db/migrate/20101230010434_create_settings.rb",
+    "test/dummy/db/migrate/20101230010435_create_slugs.rb",
+    "test/dummy/db/migrate/20101230010436_devise_create_admins.rb",
+    "test/dummy/db/migrate/20101230010437_create_entries.rb",
+    "test/dummy/db/migrate/20101230010438_create_comments.rb",
+    "test/dummy/db/migrate/20110104012359_add_new_settings.rb",
     "test/dummy/db/schema.rb",
     "test/dummy/features/step_definitions/admin_steps.rb",
     "test/dummy/features/step_definitions/email_steps.rb",
