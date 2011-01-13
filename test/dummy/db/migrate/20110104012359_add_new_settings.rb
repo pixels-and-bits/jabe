@@ -8,7 +8,7 @@ class AddNewSettings < ActiveRecord::Migration
   end
 
   def self.down
-    # remove_column :settings, :sidebar_heading
+    remove_column :settings, :sidebar_heading
     remove_column :settings, :facebook_url
     remove_column :settings, :show_github_badge
     remove_column :settings, :twitter_username
