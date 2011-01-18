@@ -20,7 +20,15 @@
     = csrf_meta_tag
     = auto_discovery_link_tag :atom, feed_path
     = stylesheet_link_tag 'boilerplate', 'jabe', 'application'
+    = yield :stylesheets
+    - if @jabe_stylesheets
+      - @jabe_stylesheets.each do |name|
+        = stylesheet_link_tag(name)
     = javascript_include_tag 'libs/modernizr-1.6.min.js'
+    %script{ :type => 'text/javascript', :charset => 'utf-8' }
+      $(document).ready(function() {
+      = yield :on_ready
+      })
   %body
     #container
       %header
@@ -43,6 +51,11 @@
     :javascript
       !window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery-min.js"%3E%3C/script%3E'))
     = javascript_include_tag 'plugins', 'application', 'rails'
+    = yield :javascripts
+    - if @jabe_javascripts
+      - @jabe_javascripts.each do |name|
+        = javascript_include_tag(name)
+
     /[if lt IE 7 ]
       <script src="/javascripts/libs/dd_belatedpng.js"></script>
       <script> DD_belatedPNG.fix('img, .png_bg'); </script>
