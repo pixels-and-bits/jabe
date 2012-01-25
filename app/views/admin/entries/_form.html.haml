@@ -1,4 +1,4 @@
-= semantic_form_for [:admin, entry] do |form|
+= simple_form_for [:admin, entry] do |form|
   = form.input :title
   = form.input :body
   = form.input :published_at if entry.published_at

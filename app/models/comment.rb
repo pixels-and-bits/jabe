@@ -1,7 +1,7 @@
 class Comment < ActiveRecord::Base
   if defined?(Gravtastic)
     include Gravtastic
-    gravtastic :size => 64
+    is_gravtastic :size => 64
   end
 
   attr_accessor :nickname

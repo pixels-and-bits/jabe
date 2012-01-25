@@ -39,7 +39,7 @@
       %a{ :name => 'add-comment' }
       #new_comment
         %h2 Add a comment
-        = semantic_form_for [entry, comment] do |form|
+        = simple_form_for [entry, comment] do |form|
           = form.input :name
           = form.input :nickname
           = form.input :email, :label => 'Email (not shown to the public)'

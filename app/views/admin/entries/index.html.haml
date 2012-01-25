@@ -9,12 +9,12 @@
     - @drafts.each do |entry|
       %tr
         %td
-          = link_to image_tag('delete_page.png'),
+          = link_to image_tag('jabe/delete_page.png'),
             admin_entry_path(entry),
             :confirm => 'Are you sure?',
             :method => :delete,
             :title => 'Delete'
-          = link_to image_tag('full_page.png'),
+          = link_to image_tag('jabe/full_page.png'),
             entry_path(entry),
             :title => 'Preview'
         %td
@@ -29,12 +29,12 @@
     - @published.each do |entry|
       %tr
         %td.icons
-          = link_to image_tag('delete_page.png'),
+          = link_to image_tag('jabe/delete_page.png'),
             admin_entry_path(entry),
             :confirm => 'Are you sure?',
             :method => :delete,
             :title => 'Delete'
-          = link_to image_tag('full_page.png'),
+          = link_to image_tag('jabe/full_page.png'),
             public_entry_path(entry),
             :title => 'Preview'
         %td

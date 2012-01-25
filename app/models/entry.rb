@@ -2,7 +2,10 @@ class Entry < ActiveRecord::Base
   before_save :set_published_at
 
   has_many :comments
-  has_friendly_id :title, :use_slug => true
+
+  extend FriendlyId
+  friendly_id :title, :use => :slugged
+
   acts_as_textiled :body
 
   default_scope :order => 'published_at DESC'

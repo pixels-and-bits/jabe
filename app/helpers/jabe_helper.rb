@@ -8,7 +8,7 @@ module JabeHelper
   end
 
   def default_gravatar_url
-    "#{request.protocol}#{request.host_with_port}/images/gravatar.gif"
+    "#{request.protocol}#{request.host_with_port}/images/jabe/gravatar.gif"
   end
 
   def page_title(title)

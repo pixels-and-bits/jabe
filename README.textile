@@ -4,23 +4,18 @@ h3. What is this?
 
 Jabe is a bare bones blogging engine that is installed as a gem. It will grow as its needs do.
 
-h2. Basic TODOs
+This version is for Rails 3.1+
 
 h2. Installing
 
 Edit your Gemfile and add the required gems
 
 <pre><code>gem 'devise'
-gem 'friendly_id', '3.1.8'
-gem 'formtastic', '>= 1.2.3.beta'
-gem 'gravtastic'
-gem 'haml', '>= 3.0.23'
-gem 'haml-rails'
-gem 'jabe'
-gem 'jquery-rails'
-gem 'RedCloth'
-gem 'sass', '>= 3.1.0.alpha.206'
-gem 'will_paginate', '>= 3.0.pre2'
+gem 'devise', '>= 1.5.3'
+gem 'friendly_id', '>= 4.0.0'
+gem 'haml-rails', '>= 0.3.4'
+gem 'kaminari'
+gem 'simple_form', '>= 1.5.2'
 </code></pre>
 
 From your rails root
@@ -28,34 +23,25 @@ From your rails root
 <pre><code>bundle install
 rails plugin install http://github.com/defunkt/acts_as_textiled.git
 rails g devise:install
-rails g jabe:migrations
+</code></pre>
+
+Edit your Gemfile and add jabe
+
+<pre><code>gem 'jabe'
+</code></pre>
+
+From your rails root
+
+<pre><code>rails g jabe:migrations
 rake db:migrate
 rm app/views/layouts/*
 rm public/index.html
-rm public/javascripts/rails.js
 rails c
 >> Admin.create!(:email => 'you@example.com', :password => 'password', :password_confirmation => 'password')
-rails s
-login
-edit settings
+exit
 </code></pre>
 
-h2. Deploying on Heroku
-
-There are a couple changes you need to make to deploy on Heroku.
-
-  * In produciton.rb set <code>config.serve_static_assets = true</code>
-  * Add an initializer for Sass config/initializers/zz-sass.rb
-    <code>Sass::Plugin.options[:never_update] = true</code>
-  * Generate the stylesheets
-    <code>rails g jabe:stylesheets</code>
-
-h2. Development setup
-
-  * fork it
-  * clone it
-  * cd jabe/test/dummy
-  * bundle install
-  * rake
-
-If all the features pass you are good to go.
+<pre><code>rails s
+http://localhost:3000/admin
+edit settings
+</code></pre>

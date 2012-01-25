@@ -19,12 +19,12 @@
     %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}/
     = csrf_meta_tag
     = auto_discovery_link_tag :atom, feed_path
-    = stylesheet_link_tag 'boilerplate', 'jabe', 'application'
+    = stylesheet_link_tag 'jabe/boilerplate', 'jabe/jabe', 'jabe/application', 'application'
     = yield :stylesheets
     - if @jabe_stylesheets
       - @jabe_stylesheets.each do |name|
         = stylesheet_link_tag(name)
-    = javascript_include_tag 'libs/modernizr-1.6.min.js'
+    = javascript_include_tag 'jlibs/modernizr-1.6.min.js'
     %script{ :type => 'text/javascript', :charset => 'utf-8' }
       $(document).ready(function() {
       = yield :on_ready
