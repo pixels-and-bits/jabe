@@ -45,3 +45,8 @@ exit
 http://localhost:3000/admin
 edit settings
 </code></pre>
+
+h2. TODO
+
+* Migrate generators
+* Switch from boilerplate to Twitter Bootstrap?
