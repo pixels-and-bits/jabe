@@ -2,7 +2,7 @@ h1. Just Another Blog Engine
 
 h3. What is this?
 
-Jabe is a bare bones blogging engine that is installed as a gem. It will grow as its needs do.
+JABE is a bare bones blogging engine that is installed as a gem. It will grow as its needs do.
 
 This version is for Rails 3.1+
 
@@ -25,7 +25,7 @@ rails plugin install http://github.com/defunkt/acts_as_textiled.git
 rails g devise:install
 </code></pre>
 
-Edit your Gemfile and add jabe
+Edit your Gemfile and add JABE
 
 <pre><code>gem 'jabe'
 </code></pre>
