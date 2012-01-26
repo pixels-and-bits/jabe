@@ -19,16 +19,9 @@
     %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}/
     = csrf_meta_tag
     = auto_discovery_link_tag :atom, feed_path
-    = stylesheet_link_tag 'jabe/boilerplate', 'jabe/jabe', 'jabe/application', 'application'
+    = stylesheet_link_tag 'jabe', 'application'
     = yield :stylesheets
-    - if @jabe_stylesheets
-      - @jabe_stylesheets.each do |name|
-        = stylesheet_link_tag(name)
-    = javascript_include_tag 'jlibs/modernizr-1.6.min.js'
-    %script{ :type => 'text/javascript', :charset => 'utf-8' }
-      $(document).ready(function() {
-      = yield :on_ready
-      })
+    = javascript_include_tag 'jabe/libs/modernizr-1.6.min.js'
   %body
     #container
       %header
@@ -47,22 +40,17 @@
           = render 'layouts/sidebar'
       %footer
         = render 'layouts/footer'
-    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"}
-    :javascript
-      !window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery-min.js"%3E%3C/script%3E'))
-    = javascript_include_tag 'plugins', 'application', 'rails'
-    = yield :javascripts
-    - if @jabe_javascripts
-      - @jabe_javascripts.each do |name|
-        = javascript_include_tag(name)
+    = javascript_include_tag 'application.js'
 
     /[if lt IE 7 ]
-      <script src="/javascripts/libs/dd_belatedpng.js"></script>
-      <script> DD_belatedPNG.fix('img, .png_bg'); </script>
-    - unless Rails.env.production?
-      / yui profiler and profileviewer - remove for production
-      = javascript_include_tag 'libs/profiling/yahoo-profiling.min.js'
-      = javascript_include_tag 'libs/profiling/config.js'
+      = javascript_include_tag 'jabe/libs/dd_belatedpng.js'
+      <script>DD_belatedPNG.fix('img, .png_bg'); </script>
+
+    %script{ :type => 'text/javascript', :charset => 'utf-8' }
+      $(document).ready(function() {
+      = yield :on_ready
+      })
+
     - unless SETTINGS.google_tracker_id.blank?
       :javascript
         var _gaq = [['_setAccount', '#{SETTINGS.google_tracker_id}'], ['_trackPageview']];

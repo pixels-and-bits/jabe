@@ -36,14 +36,30 @@ From your rails root
 rake db:migrate
 rm app/views/layouts/*
 rm public/index.html
-rails c
->> Admin.create!(:email => 'you@example.com', :password => 'password', :password_confirmation => 'password')
-exit
-</code></pre>
 
-<pre><code>rails s
+rails runner "Admin.create!(
+  :email => 'you@example.com',
+  :password => 'password',
+  :password_confirmation => 'password'
+)"
+
+rails s
 http://localhost:3000/admin
 edit settings
+</code></pre>
+
+h2. Upgrading from 0.5.*
+
+<pre><code>rails g migration rename_cached_slug_on_entries
+</code></pre>
+
+Edit the migration to look like
+
+<pre><code>class RenameCachedSlugOnEntries < ActiveRecord::Migration
+  def change
+    rename_column :entries, :cached_slug, :slug
+  end
+end
 </code></pre>
 
 h2. TODO
