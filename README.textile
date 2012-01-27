@@ -30,36 +30,44 @@ Edit your Gemfile and add JABE
 <pre><code>gem 'jabe'
 </code></pre>
 
+JABE is now mountable, so you can put it wherever you want. Edit routes.rb
+
+<pre><code>mount Jabe::Engine => "/jabe"
+
+devise_for :jabe_admin,
+  :class_name => 'Jabe::Admin',
+  :path => 'jabe/admin',
+  :sign_out_via => :get,
+  :path_names => {
+   :sign_in => 'login',
+   :sign_out => 'logout'
+  }
+</code></pre>
+
 From your rails root
 
-<pre><code>rails g jabe:migrations
+<pre><code>rails jabe:install:migrations
 rake db:migrate
-rm app/views/layouts/*
-rm public/index.html
 
-rails runner "Admin.create!(
+rails runner "Jabe::Admin.create!(
   :email => 'you@example.com',
   :password => 'password',
   :password_confirmation => 'password'
 )"
-
-rails s
-http://localhost:3000/admin
-edit settings
 </code></pre>
 
 h2. Upgrading from 0.5.*
 
-<pre><code>rails g migration rename_cached_slug_on_entries
-</code></pre>
+Create a new migration to handle the database changes.
 
-Edit the migration to look like
-
-<pre><code>class RenameCachedSlugOnEntries < ActiveRecord::Migration
+<pre><code>
   def change
-    rename_column :entries, :cached_slug, :slug
+    rename_table :settings, :jabe_settings
+    rename_table :admins, :jabe_admins
+    rename_table :entries, :jabe_entries
+    rename_table :comments, :jabe_comments
+    rename_column :jabe_entries, :cached_slug, :slug
   end
-end
 </code></pre>
 
 h2. TODO

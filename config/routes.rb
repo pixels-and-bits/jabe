@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Jabe::Engine.routes.draw do
 
   root :to => "entries#index"
 
@@ -15,10 +15,10 @@ Rails.application.routes.draw do
     resources :entries
   end
 
-  devise_for :admin, :path_names => {
-    :sign_in => 'login',
-    :sign_out => 'logout'
-  }
+  # devise_for :jabe_admin, :class_name => 'Jabe::Admin'#, :path_names => {
+  #  :sign_in => 'login',
+  #  :sign_out => 'logout'
+  # }
 
   match "/:year/:month/:day/:id" => 'entries#show',
     :constraints => {
@@ -26,4 +26,5 @@ Rails.application.routes.draw do
       :month => /\d{1,2}/,
       :day => /\d{1,2}/
     }
+
 end
