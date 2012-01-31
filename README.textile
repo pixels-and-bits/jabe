@@ -10,11 +10,10 @@ h2. Installing
 
 Edit your Gemfile and add the required gems
 
-<pre><code>gem 'devise'
-gem 'devise', '>= 1.5.3'
+<pre><code>gem 'devise', '>= 2.0.0'
 gem 'friendly_id', '>= 4.0.0'
 gem 'haml-rails', '>= 0.3.4'
-gem 'kaminari'
+gem 'kaminari', '>= 0.13.0'
 gem 'simple_form', '>= 1.5.2'
 </code></pre>
 
