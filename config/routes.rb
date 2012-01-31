@@ -15,10 +15,14 @@ Jabe::Engine.routes.draw do
     resources :entries
   end
 
-  # devise_for :jabe_admin, :class_name => 'Jabe::Admin'#, :path_names => {
-  #  :sign_in => 'login',
-  #  :sign_out => 'logout'
-  # }
+  devise_for :admin,
+    :module => :devise,
+    :sign_out_via => [ :get ],
+    :class_name => 'Jabe::Admin',
+    :path_names => {
+      :sign_in => 'login',
+      :sign_out => 'logout'
+    }
 
   match "/:year/:month/:day/:id" => 'entries#show',
     :constraints => {

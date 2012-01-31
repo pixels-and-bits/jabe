@@ -33,15 +33,6 @@ Edit your Gemfile and add JABE
 JABE is now mountable, so you can put it wherever you want. Edit routes.rb
 
 <pre><code>mount Jabe::Engine => "/jabe"
-
-devise_for :jabe_admin,
-  :class_name => 'Jabe::Admin',
-  :path => 'jabe/admin',
-  :sign_out_via => :get,
-  :path_names => {
-   :sign_in => 'login',
-   :sign_out => 'logout'
-  }
 </code></pre>
 
 From your rails root

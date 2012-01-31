@@ -26,12 +26,12 @@
     #container
       %header
         = render 'layouts/jabe/header'
-      - if jabe_admin_signed_in?
+      - if admin_signed_in?
         %nav.nav.admin
           %ul
             %li= link_to 'Entries', admin_entries_path
             %li= link_to 'Settings', edit_admin_settings_path
-            %li= link_to 'Logout', "#{root_path}admin/logout", :method => :delete
+            %li= link_to 'Logout', destroy_admin_session_path, :method => :delete
       #main
         #content
           = render 'layouts/jabe/flashes'

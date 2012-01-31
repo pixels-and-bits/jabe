@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.textile"]
 
   s.add_dependency "rails", ">= 3.1.0"
-  s.add_dependency 'devise', '>= 1.5.3'
+  s.add_dependency 'devise', '>= 2.0.0'
   s.add_dependency 'friendly_id', '>= 4.0.0'
   s.add_dependency 'gravtastic', '>= 3.2.6'
   s.add_dependency 'haml', '>= 3.1.4'

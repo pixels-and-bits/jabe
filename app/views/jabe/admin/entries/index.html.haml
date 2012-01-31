@@ -41,3 +41,5 @@
           = link_to entry.title, edit_admin_entry_path(entry)
           .when
             = entry.published_at.to_s(:long)
+
+= paginate @published

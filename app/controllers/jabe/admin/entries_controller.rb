@@ -5,7 +5,7 @@ module Jabe
 
     def index
       @drafts  = Entry.drafts
-      @published = Entry.published
+      @published = Entry.published.page(params[:page])
     end
 
     def create
