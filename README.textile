@@ -24,6 +24,8 @@ rails plugin install http://github.com/defunkt/acts_as_textiled.git
 rails g devise:install
 </code></pre>
 
+Follow Devise install directions.
+
 Edit your Gemfile and add JABE
 
 <pre><code>gem 'jabe'
@@ -36,7 +38,7 @@ JABE is now mountable, so you can put it wherever you want. Edit routes.rb
 
 From your rails root
 
-<pre><code>rails jabe:install:migrations
+<pre><code>rake jabe:install:migrations
 rake db:migrate
 
 rails runner "Jabe::Admin.create!(
