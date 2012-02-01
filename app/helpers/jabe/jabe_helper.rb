@@ -1,11 +1,11 @@
 module Jabe
-  module ApplicationHelper
+  module JabeHelper
     def public_entry_path(entry)
       "#{root_path}#{entry.published_at.in_time_zone.to_s(:url_part)}/#{entry.to_param}"
     end
 
     def public_entry_url(entry)
-      "#{Jabe::SETTINGS.site_url}#{root_path}#{public_entry_path(entry)}"
+      "#{SETTINGS.host_name}#{root_path}#{public_entry_path(entry)}"
     end
 
     def default_gravatar_url

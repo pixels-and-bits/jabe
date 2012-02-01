@@ -1,5 +1,5 @@
 module Jabe
   class ApplicationController < ActionController::Base
-    include ApplicationHelper
+    include JabeHelper
   end
 end
