@@ -16,11 +16,11 @@ module Jabe
     acts_as_textiled :body
 
     def send_notification(request)
-      begin
+      # begin
         CommentMailer.notification(self, request).deliver
-      rescue => e
-        logger.error "#{e}\n#{e.backtrace.join("\n")}"
-      end
+      # rescue => e
+      #   logger.error "#{e}\n#{e.backtrace.join("\n")}"
+      # end
     end
 
     private

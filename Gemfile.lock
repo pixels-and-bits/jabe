@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jabe (0.6.1)
+    jabe (0.6.2)
       RedCloth (>= 4.2.9)
       devise (>= 2.0.0)
       friendly_id (>= 4.0.0)
