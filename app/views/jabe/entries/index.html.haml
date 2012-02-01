@@ -3,12 +3,12 @@
     .entry{ :class => entry == @entries.last ? 'last' : '' }
       .title
         %h1
-          = link_to entry.title, public_entry_path(entry)
+          = link_to entry.title, full_entry_url(entry)
       .date
         = entry.published_at.to_s(:long)
       .content
         ~ entry.body.html_safe
       .meta
-        = link_to "Comments: #{entry.comments.count}", public_entry_path(entry) + '#comments'
+        = link_to "Comments: #{entry.comments.count}", full_entry_url(entry) + '#comments'
   #pagination.apple_pagination
     = paginate @entries

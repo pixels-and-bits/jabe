@@ -35,7 +35,7 @@
             :method => :delete,
             :title => 'Delete'
           = link_to image_tag('jabe/full_page.png'),
-            public_entry_path(entry),
+            full_entry_url(entry),
             :title => 'Preview'
         %td
           = link_to entry.title, edit_admin_entry_path(entry)

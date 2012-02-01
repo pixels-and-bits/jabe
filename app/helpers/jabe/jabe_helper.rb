@@ -1,11 +1,7 @@
 module Jabe
   module JabeHelper
-    def public_entry_path(entry)
-      "#{root_path}#{entry.published_at.in_time_zone.to_s(:url_part)}/#{entry.to_param}"
-    end
-
-    def public_entry_url(entry)
-      "#{SETTINGS.host_name}#{root_path}#{public_entry_path(entry)}"
+    def full_entry_url(entry)
+      "#{SETTINGS.host_name}#{root_path}#{entry.published_at.in_time_zone.to_s(:url_part)}/#{entry.to_param}"
     end
 
     def default_gravatar_url
