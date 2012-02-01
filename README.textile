@@ -20,7 +20,6 @@ gem 'simple_form', '>= 1.5.2'
 From your rails root
 
 <pre><code>bundle install
-rails plugin install http://github.com/defunkt/acts_as_textiled.git
 rails g devise:install
 </code></pre>
 
