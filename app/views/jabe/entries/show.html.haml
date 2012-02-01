@@ -18,7 +18,7 @@
           .comment
             - if admin_signed_in?
               .delete
-                = link_to image_tag('delete.png'),
+                = link_to image_tag('jabe/delete.png'),
                   entry_comment_path(entry, comment),
                   :confirm => 'Are you sure?',
                   :method => :delete
