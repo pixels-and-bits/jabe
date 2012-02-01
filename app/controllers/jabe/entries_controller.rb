@@ -11,7 +11,7 @@ module Jabe
     end
 
     def show
-      if entry.draft? && ! jabe_admin_signed_in?
+      if entry.draft? && ! admin_signed_in?
         render 'public/404.html', :layout => false, :status => 404
       end
     end
