@@ -1,8 +1,6 @@
 module Jabe
-  module JabeHelper
-    def full_entry_url(entry)
-      "#{SETTINGS.host_name}#{root_path}#{entry.published_at.in_time_zone.to_s(:url_part)}/#{entry.to_param}"
-    end
+  module ApplicationHelper
+    include PublicEntryUrl
 
     def default_gravatar_url
       "#{request.protocol}#{request.host_with_port}/images/jabe/gravatar.gif"

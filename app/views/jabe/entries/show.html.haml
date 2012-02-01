@@ -16,7 +16,7 @@
       - if entry.comments.any?
         - entry.comments.each do |comment|
           .comment
-            - if jabe_admin_signed_in?
+            - if admin_signed_in?
               .delete
                 = link_to image_tag('delete.png'),
                   entry_comment_path(entry, comment),

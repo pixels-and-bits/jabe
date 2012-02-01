@@ -44,5 +44,6 @@ module Jabe
       def message
         entry.draft ? "Entry was saved as a draft." : "Entry was published."
       end
+
   end
 end
