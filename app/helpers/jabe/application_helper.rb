@@ -3,7 +3,7 @@ module Jabe
     include PublicEntryUrl
 
     def default_gravatar_url
-      "#{request.protocol}#{request.host_with_port}/images/jabe/gravatar.gif"
+      "#{request.protocol}#{request.host_with_port}#{asset_path('jabe/gravatar.gif')}"
     end
 
     def page_title(title)
