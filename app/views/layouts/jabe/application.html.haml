@@ -20,8 +20,7 @@
     = csrf_meta_tag
     = auto_discovery_link_tag :atom, feed_path
     = stylesheet_link_tag 'jabe/application', 'application'
-    = yield :stylesheets
-    / = javascript_include_tag 'jabe/libs/modernizr-1.6.min.js'
+    = javascript_include_tag 'jabe/libs/modernizr-1.6.min.js'
   %body
     #container
       %header
@@ -43,6 +42,7 @@
     = javascript_include_tag 'jabe/application.js'
 
     /[if lt IE 7 ]
+      = javascript_include_tag 'jabe/lib/dd_belatedpng.js'
       %script{ :type => 'text/javascript', :charset => 'utf-8' }
         DD_belatedPNG.fix('img, .png_bg')
 

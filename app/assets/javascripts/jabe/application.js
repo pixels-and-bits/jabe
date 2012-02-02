@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
-//= require_tree ./libs
+//= require ./plugins
 
 $(function() {
   if($('#first-focus').length > 0) {
