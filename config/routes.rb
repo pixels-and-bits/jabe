@@ -16,8 +16,8 @@ Jabe::Engine.routes.draw do
   end
 
   devise_for :admin,
-    :module => :devise,
-    :sign_out_via => [ :get ],
+    # :module => :devise,
+    # :sign_out_via => [ :get ],
     :class_name => 'Jabe::Admin',
     :path_names => {
       :sign_in => 'login',

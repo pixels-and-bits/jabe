@@ -2,7 +2,7 @@ module Jabe
   class Admin < ActiveRecord::Base
     # Include default devise modules. Others available are:
     # :token_authenticatable, :confirmable, :lockable and :timeoutable
-    devise :database_authenticatable, :recoverable, :rememberable, :trackable,
+    devise :database_authenticatable, :rememberable, :trackable,
       :validatable
 
     # Setup accessible (or protected) attributes for your model
