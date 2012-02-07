@@ -1,63 +1,69 @@
-<!doctype html>
-/[if lt IE 7 ] <html lang="en" class="no-js ie6">
-/[if IE 7 ] <html lang="en" class="no-js ie7">
-/[if IE 8 ] <html lang="en" class="no-js ie8">
-/[if IE 9 ] <html lang="en" class="no-js ie9">
-/ [if (gt IE 9)|!(IE)]><!
-%html.no-js{:lang => "en"}
-  / <![endif]
+!!!
+%html{ :lang => "en" }
   %head
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{ :charset => "utf-8" }
     %title
       = "#{@page_title} - " if @page_title
       =  Jabe::SETTINGS.site_name
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
-    %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}/
-    = csrf_meta_tag
+
+    %meta{ :content => "", :name => "description" }
+    %meta{ :content => "", :name => "author" }
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
     = auto_discovery_link_tag :atom, feed_path
     = stylesheet_link_tag 'jabe/application', 'application'
-    = javascript_include_tag 'jabe/libs/modernizr-1.6.min.js'
-  %body
-    #container
-      %header
-        = render 'layouts/jabe/header'
-      - if admin_signed_in?
-        %nav.nav.admin
-          %ul
-            %li= link_to 'Entries', admin_entries_path
-            %li= link_to 'Settings', edit_admin_settings_path
-            %li= link_to 'Logout', destroy_admin_session_path, :method => :delete
-      #main
-        #content
-          = render 'layouts/jabe/flashes'
-          = yield
-        #sidebar
-          = render 'layouts/jabe/sidebar'
-      %footer
-        = render 'layouts/jabe/footer'
+    = csrf_meta_tags
+
+    / Le fav and touch icons
+    %link{ :href => asset_path("favicon.ico"), :rel => "shortcut icon" }
+    %link{ :href => asset_path("apple-touch-icon.png"), :rel => "apple-touch-icon" }
+    %link{ :href => asset_path("apple-touch-icon-72x72.png"), :rel => "apple-touch-icon", :sizes => "72x72" }
+    %link{ :href => asset_path("apple-touch-icon-114x114.png"), :rel => "apple-touch-icon", :sizes => "114x114" }
+  %body{ :class => body_class_name }
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container-fluid
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to Jabe::SETTINGS.site_name, root_path, :class => 'brand'
+          .nav-collapse
+            %ul.nav
+              %li
+                = link_to Jabe::SETTINGS.tagline, root_path
+            = render 'layouts/jabe/admin'
+
+    #main
+      .container-fluid
+        .row-fluid
+          .span9
+            .row-fluid
+              = render 'layouts/jabe/flash_messages'
+              = yield
+
+          .span3
+            .well.sidebar-nav
+              %ul.nav.nav-list
+                %li.nav-header
+                  = Jabe::SETTINGS.sidebar_heading
+                - unless  Jabe::SETTINGS.github_username.blank?
+                  %li
+                    = link_to 'Github',  Jabe::SETTINGS.github_username
+
+                - unless  Jabe::SETTINGS.twitter_username.blank?
+                  %li
+                    = link_to 'Twitter',  Jabe::SETTINGS.twitter_username
+
+                - unless  Jabe::SETTINGS.facebook_url.blank?
+                  %li
+                    = link_to 'Facebook',  Jabe::SETTINGS.facebook_url
+        #push
+
+    %footer.footer
+      %p
+        = "Powered by #{link_to 'JABE', 'http://github.com/pixels-and-bits/jabe'} a #{link_to 'Pixels and Bits', 'http://pixels-and-bits.com'} project".html_safe
+
     = javascript_include_tag 'jabe/application.js'
-
-    /[if lt IE 7 ]
-      = javascript_include_tag 'jabe/libs/dd_belatedpng.js'
-      %script{ :type => 'text/javascript', :charset => 'utf-8' }
-        DD_belatedPNG.fix('img, .png_bg')
-
-    %script{ :type => 'text/javascript', :charset => 'utf-8' }
-      $(document).ready(function() {
-      = yield :on_ready
-      })
-
-    - unless  Jabe::SETTINGS.google_tracker_id.blank?
-      :javascript
-        var _gaq = [['_setAccount', '#{ Jabe::SETTINGS.google_tracker_id}'], ['_trackPageview']];
-        (function(d, t) {
-         var g = d.createElement(t),
-             s = d.getElementsByTagName(t)[0];
-         g.async = true;
-         g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-         s.parentNode.insertBefore(g, s);
-        })(document, 'script');

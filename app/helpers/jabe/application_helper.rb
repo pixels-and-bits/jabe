@@ -2,6 +2,10 @@ module Jabe
   module ApplicationHelper
     include PublicEntryUrl
 
+    def body_class_name
+      controller.class.to_s.underscore.parameterize.dasherize.gsub(/-controller$/, '')
+    end
+
     def default_gravatar_url
       "#{request.protocol}#{request.host_with_port}#{asset_path('jabe/gravatar.gif')}"
     end

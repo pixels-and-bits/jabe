@@ -10,5 +10,4 @@
         ~ entry.body.html_safe
       .meta
         = link_to "Comments: #{entry.comments.count}", public_entry_url(entry) + '#comments'
-  #pagination.apple_pagination
-    = paginate @entries
+  = paginate @entries

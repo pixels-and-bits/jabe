@@ -12,15 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require ./plugins
+//= require bootstrap
 
 $(function() {
   if($('#first-focus').length > 0) {
     $('#first-focus').focus();
   }
+
+  $('.dropdown-toggle').dropdown()
 });
 
-var Strappy = function() {
+var JABE = function() {
   return {
     updateSortables: function(parent) {
       var elems = $(parent + ' ul li .position'), i = 1
