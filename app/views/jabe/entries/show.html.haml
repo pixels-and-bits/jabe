@@ -46,4 +46,4 @@
           = form.input :url, :label => 'Website'
           = form.input :body, :label => 'Comment',
             :hint => "Textile enabled (#{link_to 'Reference', 'http://redcloth.org/try-redcloth/', :target => '_blank'})".html_safe
-          = form.submit 'Add comment'
+          = form.submit 'Add comment', :class => 'btn-success'

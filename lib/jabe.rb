@@ -12,4 +12,18 @@ module Jabe
     end
   end
 
+  module BodyClassHelper
+    def self.included( base )
+      base.send(:helper_method, :body_class_name) if base.respond_to?(:helper_method)
+    end
+
+    def body_class_name
+      if self.respond_to?(:controller)
+        controller.class.to_s.underscore.parameterize.dasherize.gsub(/-controller$/, '')
+      else
+        self.class.to_s.underscore.parameterize.dasherize.gsub(/-controller$/, '')
+      end
+    end
+  end
+
 end

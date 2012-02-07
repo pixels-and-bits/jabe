@@ -51,15 +51,15 @@
                   = Jabe::SETTINGS.sidebar_heading
                 - unless  Jabe::SETTINGS.github_username.blank?
                   %li
-                    = link_to 'Github',  Jabe::SETTINGS.github_username
+                    = link_to 'Github',  "http://github.com/#{Jabe::SETTINGS.github_username}"
 
                 - unless  Jabe::SETTINGS.twitter_username.blank?
                   %li
-                    = link_to 'Twitter',  Jabe::SETTINGS.twitter_username
+                    = link_to 'Twitter',  "https://twitter.com/#!/#{Jabe::SETTINGS.twitter_username}"
 
                 - unless  Jabe::SETTINGS.facebook_url.blank?
                   %li
-                    = link_to 'Facebook',  Jabe::SETTINGS.facebook_url
+                    = link_to 'Facebook',  "http://facebook.com/#{Jabe::SETTINGS.facebook_url}"
         #push
 
     %footer.footer
