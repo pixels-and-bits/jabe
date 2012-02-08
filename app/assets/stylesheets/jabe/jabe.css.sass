@@ -29,6 +29,11 @@ textarea
     .entry
       border-bottom: none
 
+.jabe-admin-settings
+  span.add-on
+    width: 132px
+    text-align: right
+
 .hint
   margin-left: 10px
 
@@ -39,6 +44,9 @@ select.datetime
   margin-bottom: 30px
   padding-bottom: 30px
   border-bottom: solid 1px #333
+
+  #comment_nickname, label[for=comment_nickname]
+    display: none
 
   .title
     font-size: 1.5em
@@ -55,4 +63,45 @@ select.datetime
       font-size: 1.1em
       line-height: 1.4em
       padding: .5em
+
+
+#comments
+  padding-top: 20px
+
+  .comment
+    clear: both
+
+    .delete
+      float: right
+      padding-top: 2px
+
+    .gravatar
+      margin: 10px 10px 10px 0
+      float: left
+      width: 64px
+      height: 64px
+      border: solid 5px #0088CC
+      -webkit-border-radius:  5px
+      -moz-border-radius:  5px
+      border-radius:  5px
+
+      img
+        width: 64px
+        height: 64px
+
+    .author
+      font-weight: bold
+      padding: 10px 0 5px 10px
+
+      .when
+        padding-left: 10px
+        font-size: .8em
+
+    .body
+      min-height: 55px
+      padding: 5px 20px
+      border-bottom: solid 1px #333
+
+  #new_comment
+    padding-top: 20px
 

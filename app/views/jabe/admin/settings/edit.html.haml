@@ -1,15 +1,26 @@
 %h2 Site Settings
-= simple_form_for Jabe::SETTINGS, :url => admin_settings_path do |form|
-  = form.input :host_name, :label => 'Domain and port', :hint => '(e.g. pixels-and-bits.com or localhost:3000)'
-  = form.input :site_name
-  = form.input :tagline
-  = form.input :mail_from
-  = form.input :time_zone, :label => 'Your local time zone'
-  = form.input :entries_per_page, :label => 'Entries on the home page'
-  = form.input :sidebar_heading
-  = form.input :github_username
-  = form.input :show_github_badge
-  = form.input :twitter_username
-  = form.input :facebook_url
-  = form.input :google_tracker_id
-  = form.submit 'Save', :class => 'btn-success'
+= simple_form_for Jabe::SETTINGS, :url => admin_settings_path, :html => { :class => 'form-horizontal' } do |form|
+  = form.input :host_name, :label => 'Domain and port', :input_html => { :class => "span7" }, :hint => '(e.g. pixels-and-bits.com or localhost:3000)'
+  = form.input :site_name, :input_html => { :class => "span7" }
+  = form.input :tagline, :input_html => { :class => "span7" }
+  = form.input :mail_from, :input_html => { :class => "span7" }
+  = form.input :time_zone, :label => 'Your local time zone', :input_html => { :class => "span7" }
+  = form.input :entries_per_page, :label => 'Entries per page', :input_html => { :class => "span7" }
+  = form.input :sidebar_heading, :input_html => { :class => "span7" }
+
+  = form.input :github_username, :wrapper => :prepend, :label => 'Github' do
+    = content_tag :span, "http://github.com/", :class => "add-on"
+    = form.input_field :github_username, :class => "span4"
+
+  / = form.input :show_github_badge
+
+  = form.input :twitter_username, :wrapper => :prepend, :label => 'Twitter' do
+    = content_tag :span, "https://twitter.com/#!/", :class => "add-on"
+    = form.input_field :twitter_username, :class => "span4"
+
+  = form.input :facebook_url, :wrapper => :prepend, :label => 'Facebook' do
+    = content_tag :span, "http://facebook.com/", :class => "add-on"
+    = form.input_field :facebook_url, :class => "span4"
+
+  = form.input :google_tracker_id, :input_html => { :class => "span7" }
+  = form.submit 'Save', :class => 'btn btn-success'
