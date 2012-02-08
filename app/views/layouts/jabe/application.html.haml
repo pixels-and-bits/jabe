@@ -21,6 +21,7 @@
     %link{ :href => "/apple-touch-icon.png", :rel => "apple-touch-icon" }
     %link{ :href => "/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72" }
     %link{ :href => "/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114" }
+
   %body{ :class => body_class_name }
     .navbar.navbar-fixed-top
       .navbar-inner
@@ -67,6 +68,12 @@
         = "Powered by #{link_to 'JABE', 'http://github.com/pixels-and-bits/jabe'} a #{link_to 'Pixels and Bits', 'http://pixels-and-bits.com'} project".html_safe
 
     = javascript_include_tag 'jabe/application.js'
+
+    :javascript
+      $(document).ready(function() {
+        prettyPrint()
+      })
+
     - if Rails.env.production? && Jabe::SETTINGS.google_tracker_id.present?
       :javascript
         JABE.load_gat('#{Jabe::SETTINGS.google_tracker_id}')
