@@ -67,6 +67,6 @@
         = "Powered by #{link_to 'JABE', 'http://github.com/pixels-and-bits/jabe'} a #{link_to 'Pixels and Bits', 'http://pixels-and-bits.com'} project".html_safe
 
     = javascript_include_tag 'jabe/application.js'
-    - if Rails.env.produciton? && Jabe::SETTINGS.google_tracker_id.present?
+    - if Rails.env.production? && Jabe::SETTINGS.google_tracker_id.present?
       :javascript
         JABE.load_gat('#{Jabe::SETTINGS.google_tracker_id}')
