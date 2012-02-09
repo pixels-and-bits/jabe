@@ -20,18 +20,18 @@ gem 'bootstrap-sass',
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem 'rails', '3.2.0'
-gem 'jquery-rails'
-gem 'mysql2'
-gem 'sass-rails', '~> 3.2.0'
+group :development, :test do
+  gem 'rails', '3.2.0'
+  gem 'jquery-rails'
+  gem 'mysql2'
+  gem 'sass-rails', '~> 3.2.0'
 
-gem 'devise', '>= 2.0.0'
-gem 'friendly_id', '>= 4.0.0'
-gem 'kaminari'
-gem 'haml-rails', '>= 0.3.4'
-gem 'simple_form', '>= 2.0.0rc'
+  gem 'devise', '>= 2.0.0'
+  gem 'friendly_id', '>= 4.0.0'
+  gem 'kaminari'
+  gem 'haml-rails', '>= 0.3.4'
+  gem 'simple_form', '>= 2.0.0rc'
 
-group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'launchy'
