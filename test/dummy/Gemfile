@@ -1,0 +1,29 @@
+source 'https://rubygems.org'
+
+gem 'rails', '3.2.0'
+gem 'jquery-rails'
+gem 'sqlite3'
+gem 'sass-rails', '~> 3.2.0'
+
+gem 'devise', '>= 2.0.0'
+gem 'friendly_id', '>= 4.0.0'
+gem 'kaminari'
+gem 'haml-rails', '>= 0.3.4'
+gem 'simple_form', '>= 2.0.0rc'
+
+gem 'jabe',
+  :path => '../../'
+
+gem 'bootstrap-sass',
+  :git => 'git://github.com/pixels-and-bits/bootstrap-sass.git',
+  :ref => 'd4aa7dc'
+
+group :assets do
+  gem 'coffee-rails', '~> 3.2.0'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+group :test do
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+end

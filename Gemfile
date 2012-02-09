@@ -19,3 +19,30 @@ gem 'bootstrap-sass',
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem 'rails', '3.2.0'
+gem 'jquery-rails'
+gem 'mysql2'
+gem 'sass-rails', '~> 3.2.0'
+
+gem 'devise', '>= 2.0.0'
+gem 'friendly_id', '>= 4.0.0'
+gem 'kaminari'
+gem 'haml-rails', '>= 0.3.4'
+gem 'simple_form', '>= 2.0.0rc'
+
+group :test do
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'launchy'
+end
+
+# gem 'jabe',
+#   :git => 'git://github.com/pixels-and-bits/jabe.git',
+#   :ref => '1aae95d'
+#   # :path => '/Users/mmoen/code/pnb/jabe'
+
+# group :assets do
+#   gem 'coffee-rails', '~> 3.2.0'
+#   gem 'uglifier', '>= 1.0.3'
+# end
