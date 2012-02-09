@@ -1,6 +1,7 @@
 module Jabe
   class SessionsController < ::Devise::SessionsController
     layout 'jabe/application'
+    include BodyClassHelper
 
     protected
 
