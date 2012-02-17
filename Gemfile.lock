@@ -1,9 +1,9 @@
 GIT
   remote: git://github.com/pixels-and-bits/bootstrap-sass.git
-  revision: d4aa7dcd1096d1135d1501294eefcae64533fa18
-  ref: d4aa7dc
+  revision: 118cf8772e68d8cfd3748a879e7ffef4b04072cf
+  ref: 118cf87
   specs:
-    bootstrap-sass (2.0.0)
+    bootstrap-sass (2.0.1)
 
 PATH
   remote: .
