@@ -22,7 +22,7 @@ gem 'bootstrap-sass',
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :development, :test do
-  gem 'rails', '3.2.0'
+  gem 'rails', '3.2.8'
   gem 'jquery-rails'
   gem 'mysql2'
   gem 'sass-rails', '~> 3.2.0'
