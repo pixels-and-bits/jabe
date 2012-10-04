@@ -1,0 +1,84 @@
+<% page_title entry.title %>
+
+<div id="entries">
+  <div class="entry last">
+    <div class="title">
+      <h3>
+        <%= entry.title %>
+      </h3>
+    </div>
+    <div class="date">
+      <%= entry.published_at.try(:to_s, :long) %>
+    </div>
+    <div class="content">
+      <%= entry.body.html_safe %>
+    </div>
+
+    <a name="comments"></a>
+
+    <div id="comments">
+      <h4>Comments</h4>
+      <div class="comments">
+        <% if entry.comments.any? %>
+          <% entry.comments.each do |comment| %>
+            <div class="comment">
+              <% if admin_signed_in? %>
+                <div class="delete">
+                  <%= link_to image_tag('jabe/delete.png'), entry_comment_path(entry, comment), :confirm => 'Are you sure?', :method => :delete %>
+                </div>
+              <% end %>
+
+              <% if comment.respond_to?(:gravatar_url) %>
+                <div class="gravatar">
+                  <%= image_tag comment.gravatar_url(:default => default_gravatar_url) %>
+                </div>
+              <% end %>
+
+              <div class="author">
+                <%= comment.name %>
+                <span class="when">
+                  <%= comment.created_at.to_s(:long) %>
+                </span>
+              </div>
+              <div class="body">
+                <%= comment.body.html_safe %>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="comment">
+            <div class="author">
+              None yet...
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <a name="add-comment"></a>
+
+    <div id="new_comment">
+      <h4>Add a comment</h4>
+      <%= form_for [entry, comment] do |form| %>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+
+        <%= form.label :nickname %>
+        <%= form.text_field :nickname %>
+
+        <%= form.label :email %>
+        <%= form.text_field :email, :label => 'Email (not shown to the public)' %>
+
+        <%= form.label :url, 'Website' %>
+        <%= form.text_field :url %>
+
+        <%= form.label :body, "Comment - Textile enabled (#{link_to 'Reference', 'http://redcloth.org/try-redcloth/', :target => '_blank'})".html_safe %>
+        <%= form.text_area :body %>
+
+        <br>
+
+        <%= form.submit 'Add comment', :class => 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

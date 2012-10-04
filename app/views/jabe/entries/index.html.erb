@@ -1,0 +1,21 @@
+<div id="entries">
+  <% @entries.each do |entry| %>
+    <div class="entry<%= entry == @entries.last ? ' last' : '' %>">
+      <div class="title">
+        <h3>
+          <%= link_to entry.title, public_entry_url(entry) %>
+        </h3>
+      </div>
+      <div class="date">
+        <%= entry.published_at.to_s(:long) %>
+      </div>
+      <div class="content">
+        <%= entry.body.html_safe %>
+      </div>
+      <div class="meta">
+        <%= link_to "Comments: #{entry.comments.count}", public_entry_url(entry) + '#comments' %>
+      </div>
+    </div>
+  <% end %>
+<div>
+<%= paginate @entries %>

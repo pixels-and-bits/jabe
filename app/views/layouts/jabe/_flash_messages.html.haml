@@ -1,6 +1,0 @@
-- [:error, :warning, :success, :info, :notice, :alert].each do |message_type|
-  - if flash[message_type]
-    %div{ :class => "alert-message #{message_type} fade in"}
-      = link_to 'x', '#', :class => 'close'
-      %p
-        = flash[message_type]

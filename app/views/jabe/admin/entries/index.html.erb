@@ -1,0 +1,64 @@
+<p>
+  <%= link_to 'Start a new entry', new_admin_entry_path %>
+  <br>
+</p>
+
+<h2>Drafts</h2>
+
+<% if @drafts.any? %>
+  <table class="entries">
+    <% @drafts.each do |entry| %>
+      <tr>
+        <td>
+          <%= link_to image_tag('jabe/delete_page.png'),
+            admin_entry_path(entry),
+            :confirm => 'Are you sure?',
+            :method => :delete,
+            :title => 'Delete'
+          %>
+          <%= link_to image_tag('jabe/full_page.png'),
+            entry_path(entry),
+            :title => 'Preview'
+          %>
+        </td>
+        <td>
+          <%= link_to entry.title, edit_admin_entry_path(entry) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<br>
+
+<h2>Published</h2>
+
+<% if @published.any? %>
+  <table class="entries">
+    <% @published.each do |entry| %>
+      <tr>
+        <td class="icons">
+          <%= link_to image_tag('jabe/delete_page.png'),
+            admin_entry_path(entry),
+            :confirm => 'Are you sure?',
+            :method => :delete,
+            :title => 'Delete'
+          %>
+          <%= link_to image_tag('jabe/full_page.png'),
+            public_entry_url(entry),
+            :title => 'Preview'
+          %>
+        </td>
+        <td>
+          <%= link_to entry.title, edit_admin_entry_path(entry) %>
+          <div class="when">
+            <%= entry.published_at.to_s(:long) %>
+          </div>
+
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<%= paginate @published %>

@@ -41,7 +41,7 @@ select.datetime {
 
 .entry {
   margin-bottom: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   border-bottom: solid 1px #333;
 }
 .entry #comment_nickname, .entry label[for=comment_nickname] {
@@ -59,8 +59,7 @@ select.datetime {
 }
 .entry .content p {
   font-size: 1.1em;
-  line-height: 1.4em;
-  padding: .5em;
+  padding: .2em;
 }
 
 #comments {

@@ -30,7 +30,6 @@ group :development, :test do
   gem 'devise', '>= 2.0.0'
   gem 'friendly_id', '>= 4.0.0'
   gem 'kaminari'
-  gem 'haml-rails', '>= 0.3.4'
   gem 'simple_form', '>= 2.0.0rc'
 
   gem 'cucumber-rails'
