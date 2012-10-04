@@ -1,0 +1,105 @@
+#main {
+  padding-top: 50px;
+}
+
+.sidebar-nav {
+  padding: 9px 0;
+}
+
+pre code {
+  border: none;
+}
+
+textarea {
+  width: 75%;
+  height: 200px;
+}
+
+.jabe-admin-entries .entry, .jabe-admin-settings .entry {
+  border-bottom: none;
+}
+.jabe-admin-entries .sidebar-nav, .jabe-admin-settings .sidebar-nav {
+  display: none;
+}
+
+.jabe-entries #entries .entry {
+  border-bottom: none;
+}
+
+.jabe-admin-settings span.add-on {
+  width: 132px;
+  text-align: right;
+}
+
+.hint {
+  margin-left: 10px;
+}
+
+select.datetime {
+  width: 80px;
+}
+
+.entry {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: solid 1px #333;
+}
+.entry #comment_nickname, .entry label[for=comment_nickname] {
+  display: none;
+}
+.entry .title {
+  font-size: 1.5em;
+}
+.entry .date {
+  font-size: .8em;
+  padding: 5px 0 0 .5em;
+}
+.entry .meta {
+  padding-left: .5em;
+}
+.entry .content p {
+  font-size: 1.1em;
+  line-height: 1.4em;
+  padding: .5em;
+}
+
+#comments {
+  padding-top: 20px;
+}
+#comments .comment {
+  clear: both;
+}
+#comments .comment .delete {
+  float: right;
+  padding-top: 2px;
+}
+#comments .comment .gravatar {
+  margin: 10px 10px 10px 0;
+  float: left;
+  width: 64px;
+  height: 64px;
+  border: solid 5px #0088CC;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#comments .comment .gravatar img {
+  width: 64px;
+  height: 64px;
+}
+#comments .comment .author {
+  font-weight: bold;
+  padding: 10px 0 5px 10px;
+}
+#comments .comment .author .when {
+  padding-left: 10px;
+  font-size: .8em;
+}
+#comments .comment .body {
+  min-height: 55px;
+  padding: 5px 20px;
+  border-bottom: solid 1px #333;
+}
+#comments #new_comment {
+  padding-top: 20px;
+}

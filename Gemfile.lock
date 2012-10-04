@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/pixels-and-bits/bootstrap-sass.git
-  revision: 118cf8772e68d8cfd3748a879e7ffef4b04072cf
-  ref: 118cf87
-  specs:
-    bootstrap-sass (2.0.1)
-
 PATH
   remote: .
   specs:
@@ -175,7 +168,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass!
   cucumber-rails
   database_cleaner
   devise (>= 2.0.0)
@@ -187,6 +179,5 @@ DEPENDENCIES
   launchy
   mysql2
   rails (= 3.2.8)
-  sass-rails (~> 3.2.0)
   simple_form (>= 2.0.0rc)
   sqlite3

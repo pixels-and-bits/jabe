@@ -1,4 +1,5 @@
 /*
- *= require ./jabe
+ *= require ./bootstrap
  *= require ./prettify
+ *= require ./jabe
 */

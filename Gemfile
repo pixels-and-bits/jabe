@@ -8,10 +8,10 @@ gemspec
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
 
-gem 'bootstrap-sass',
-  :git => 'git://github.com/pixels-and-bits/bootstrap-sass.git',
-  :ref => '118cf87'
-  # :path => '/Users/mmoen/code/pnb/bootstrap-sass'
+# gem 'bootstrap-sass',
+#   :git => 'git://github.com/pixels-and-bits/bootstrap-sass.git',
+#   :ref => '118cf87'
+#   # :path => '/Users/mmoen/code/pnb/bootstrap-sass'
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
@@ -25,7 +25,7 @@ group :development, :test do
   gem 'rails', '3.2.8'
   gem 'jquery-rails'
   gem 'mysql2'
-  gem 'sass-rails', '~> 3.2.0'
+  # gem 'sass-rails', '~> 3.2.0'
 
   gem 'devise', '>= 2.0.0'
   gem 'friendly_id', '>= 4.0.0'
