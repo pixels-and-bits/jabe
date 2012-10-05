@@ -85,7 +85,9 @@
         prettyPrint()
       })
 
-      <%= JABE.load_gat('#{Jabe::SETTINGS.google_tracker_id}') if Rails.env.production? && Jabe::SETTINGS.google_tracker_id.present? %>
+      <% if Rails.env.production? && Jabe::SETTINGS.google_tracker_id.present? %>
+        JABE.load_gat('<%= Jabe::SETTINGS.google_tracker_id %>')
+      <% end %>
     </script>
   </div>
 </body>
