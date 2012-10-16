@@ -8,17 +8,14 @@ GIT
 PATH
   remote: ../../
   specs:
-    jabe (0.7.0)
+    jabe (0.8.0)
       RedCloth (>= 4.2.9)
       devise (>= 2.0.0)
       friendly_id (>= 4.0.0)
       gravtastic (>= 3.2.6)
-      haml (>= 3.1.4)
-      haml-rails (>= 0.3.4)
       kaminari (>= 0.13.0)
       rails (>= 3.1.0)
-      sass-rails (>= 3.1.0)
-      simple_form (>= 2.0.0.rc)
+      sanitize (>= 2.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -148,6 +145,8 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     rubyzip (0.9.9)
+    sanitize (2.0.3)
+      nokogiri (>= 1.4.4, < 1.6)
     sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)

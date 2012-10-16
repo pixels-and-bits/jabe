@@ -28,6 +28,6 @@ Bundler::GemHelper.install_tasks
 task :default do
   # NOTE: There has to be a better way to do this
   Dir.chdir('test/dummy') do
-    exit system("bundle exec cucumber features")
+    exit system("bundle exec rake db:test:prepare && bundle exec cucumber features")
   end
 end
