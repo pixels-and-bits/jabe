@@ -34,7 +34,7 @@ module Jabe
 
       def sanitize
         self.email = Sanitize.clean(email)
-        self.website = Sanitize.clean(website)
+        self.url = Sanitize.clean(url)
         self.body = Sanitize.clean(body)
       end
   end
