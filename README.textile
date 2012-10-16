@@ -67,4 +67,6 @@ Create a new migration to handle the database changes.
 h2. TODO
 
 * Migrate generators
-* Switch from boilerplate to Twitter Bootstrap?
+* Integrate Akismet
+* Add a comment moderation queue?
+
