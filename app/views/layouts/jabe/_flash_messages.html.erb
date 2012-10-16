@@ -2,9 +2,7 @@
   <% if flash[message_type] %>
     <div class="<%= "alert alert-#{message_type} fade in" %>">
       <%= link_to '&times;'.html_safe, '#', :class => 'close' %>
-      <p>
-        <%= flash[message_type] %>
-      </p>
+      <%= flash[message_type] %>
     </div>
   <% end %>
 <% end %>

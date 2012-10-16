@@ -7,6 +7,7 @@ gemspec
 
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
+gem 'sanitize', '>= 2.0.0'
 
 # gem 'bootstrap-sass',
 #   :git => 'git://github.com/pixels-and-bits/bootstrap-sass.git',

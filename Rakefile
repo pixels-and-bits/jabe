@@ -27,5 +27,7 @@ Bundler::GemHelper.install_tasks
 
 task :default do
   # NOTE: There has to be a better way to do this
-  exit system("bundle exec cucumber features")
+  Dir.chdir('test/dummy') do
+    exit system("bundle exec cucumber features")
+  end
 end

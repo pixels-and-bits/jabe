@@ -10,7 +10,7 @@ module Jabe
     belongs_to :entry
     default_scope :order => 'created_at ASC'
 
-    before_validation :bot_check
+    before_validation :bot_check, :sanitize
     validates_presence_of :name, :email, :body, :message => 'Required'
 
     acts_as_textiled :body
@@ -28,8 +28,14 @@ module Jabe
       def bot_check
         unless self.nickname.blank?
           errors.add(:nickname, 'You shouldn\'t have seen this...')
-          false
+          return false
         end
+      end
+
+      def sanitize
+        self.email = Sanitize.clean(email)
+        self.website = Sanitize.clean(website)
+        self.body = Sanitize.clean(body)
       end
   end
 end

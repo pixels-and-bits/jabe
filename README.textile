@@ -1,5 +1,9 @@
 h1. Just Another Blog Engine
 
+h2. Status
+
+"!https://codeclimate.com/badge.png!":https://codeclimate.com/github/pixels-and-bits/jabe
+
 h3. What is this?
 
 JABE is a bare bones blogging engine that is installed as a gem. It will grow as its needs do.
