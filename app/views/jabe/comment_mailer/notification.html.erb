@@ -2,6 +2,9 @@
   On: <%= public_entry_url(@comment.entry) %>
 </p>
 <p>
+  SPAM: <%= @comment.spam? %>
+</p>
+<p>
   From: <%= @comment.author %>
 </p>
 <p>

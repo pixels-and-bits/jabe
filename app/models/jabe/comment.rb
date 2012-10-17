@@ -22,11 +22,11 @@ module Jabe
     acts_as_textiled :content
 
     def send_notification
-      # begin
+      begin
         CommentMailer.notification(self).deliver
-      # rescue => e
-      #   logger.error "#{e}\n#{e.backtrace.join("\n")}"
-      # end
+      rescue => e
+        logger.error "#{e}\n#{e.backtrace.join("\n")}"
+      end
     end
 
     private
