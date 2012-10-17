@@ -1,5 +1,7 @@
 module Jabe
   class CommentsController < Admin::BaseController
+    include PublicEntryUrl
+
     layout 'application'
     skip_before_filter :authenticate_admin!, :only => [ :create, :new ]
     helper_method :entry, :comment
@@ -7,7 +9,7 @@ module Jabe
     def create
       if comment.save
         comment.send_notification(request)
-        redirect_to entry_path(entry), :notice => 'Your comment was submitted.'
+        redirect_to public_entry_url(entry), :notice => 'Your comment was submitted.'
       else
         flash[:error] = 'Unable to submit your comment.'
         render 'entries/show'

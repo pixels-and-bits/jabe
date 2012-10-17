@@ -1,5 +1,7 @@
 module Jabe
   class CommentMailer < ActionMailer::Base
+    include PublicEntryUrl
+
     def notification(comment, request)
       @comment = comment
       @request = request

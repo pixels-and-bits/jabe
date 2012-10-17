@@ -8,7 +8,7 @@ module Jabe
     end
 
     def public_entry_url(entry)
-      "//#{SETTINGS.host_name}#{root_path}#{entry.published_at.in_time_zone.to_s(:url_part)}/#{entry.to_param}"
+      "http://#{SETTINGS.host_name}#{root_path}#{entry.published_at.in_time_zone.to_s(:url_part)}/#{entry.to_param}"
     end
   end
 
