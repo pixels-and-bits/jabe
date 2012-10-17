@@ -28,6 +28,8 @@ Bundler::GemHelper.install_tasks
 task :default do
   # NOTE: There has to be a better way to do this
   Dir.chdir('test/dummy') do
+    FileUtils.rm(%w(db/dev.sqlite3)) rescue Errno::ENOENT
+    FileUtils.rm(%w(db/test.sqlite3)) rescue Errno::ENOENT
     exit system("bundle exec rake db:migrate db:test:prepare && bundle exec cucumber features")
   end
 end

@@ -2,21 +2,21 @@
   On: <%= public_entry_url(@comment.entry) %>
 </p>
 <p>
-  From: <%= @comment.name %>
+  From: <%= @comment.author %>
 </p>
 <p>
-  Email: <%= @comment.email %>
+  Email: <%= @comment.author_email %>
 </p>
 <p>
-  URL: <%= @comment.url %>
+  URL: <%= @comment.author_url %>
 </p>
 <p>
-  <%= @comment.body.html_safe %>
+  <%= @comment.content.html_safe %>
 </p>
 <hr>
 <p>
-  Remote IP: <%= @request.remote_ip %>
+  Remote IP: <%= @comment.user_ip %>
 </p>
 <p>
-  User agent: <%= @request.user_agent %>
+  User agent: <%= @comment.user_agent %>
 </p>

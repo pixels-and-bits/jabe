@@ -2,9 +2,8 @@ module Jabe
   class CommentMailer < ActionMailer::Base
     include PublicEntryUrl
 
-    def notification(comment, request)
+    def notification(comment)
       @comment = comment
-      @request = request
 
       mail(:to => Admin.all.map(&:email),
         :subject => "Comment on: #{comment.entry.title}",

@@ -1,26 +1,32 @@
 module Jabe
   class Comment < ActiveRecord::Base
+    include Rakismet::Model
+    include PublicEntryUrl
+
     if defined?(Gravtastic)
       include Gravtastic
-      is_gravtastic :size => 64
+      gravtastic :author_email, :size => 64
     end
 
-    attr_accessor :nickname
+    attr_accessor :nickname, :request
 
     belongs_to :entry
     default_scope :order => 'created_at ASC'
+    scope :approved, :conditions => { :spam => false }
 
-    before_validation :bot_check, :sanitize
-    validates_presence_of :name, :email, :body, :message => 'Required'
+    before_validation :bot_check, :check_akismet, :sanitize
+    validates_presence_of :author, :author_email, :content, :message => 'Required'
 
-    acts_as_textiled :body
+    after_create :send_notification
 
-    def send_notification(request)
-      begin
-        CommentMailer.notification(self, request).deliver
-      rescue => e
-        logger.error "#{e}\n#{e.backtrace.join("\n")}"
-      end
+    acts_as_textiled :content
+
+    def send_notification
+      # begin
+        CommentMailer.notification(self).deliver
+      # rescue => e
+      #   logger.error "#{e}\n#{e.backtrace.join("\n")}"
+      # end
     end
 
     private
@@ -32,10 +38,19 @@ module Jabe
         end
       end
 
+      def check_akismet
+        self.user_ip = request.remote_ip
+        self.user_agent = request.env['HTTP_USER_AGENT']
+        self.referrer = request.env['HTTP_REFERER']
+        self.spam = spam?
+        true
+      end
+
       def sanitize
-        self.email = Sanitize.clean(email)
-        self.url = Sanitize.clean(url)
-        self.body = Sanitize.clean(body)
+        self.author_email = Sanitize.clean(author_email)
+        self.author_url = Sanitize.clean(author_url)
+        self.content = Sanitize.clean(content)
+        true
       end
   end
 end

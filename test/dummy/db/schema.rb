@@ -11,21 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120208233659) do
+ActiveRecord::Schema.define(:version => 20121017015058) do
 
   create_table "jabe_admins", :force => true do |t|
-    t.string   "email",                                 :default => "", :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                         :default => 0
+    t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                            :null => false
-    t.datetime "updated_at",                                            :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
   add_index "jabe_admins", ["email"], :name => "index_jabe_admins_on_email", :unique => true
@@ -33,12 +33,17 @@ ActiveRecord::Schema.define(:version => 20120208233659) do
 
   create_table "jabe_comments", :force => true do |t|
     t.integer  "entry_id"
-    t.string   "name"
-    t.string   "email"
-    t.string   "url"
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "author"
+    t.string   "author_email"
+    t.string   "author_url"
+    t.text     "content"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "permalink"
+    t.string   "user_ip"
+    t.string   "user_agent"
+    t.string   "referrer"
+    t.boolean  "spam"
   end
 
   add_index "jabe_comments", ["entry_id"], :name => "index_jabe_comments_on_entry_id"
@@ -70,6 +75,8 @@ ActiveRecord::Schema.define(:version => 20120208233659) do
     t.string   "facebook_url"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "akismet_key"
+    t.string   "akismet_url"
   end
 
 end

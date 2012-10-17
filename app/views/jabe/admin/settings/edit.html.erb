@@ -43,6 +43,14 @@
   <%= form.label :google_tracker_id %>
   <%= form.text_field :google_tracker_id, :input_html => { :class => "span7" } %>
 
+  <%= form.label :akismet_key, 'Akismet Key (leave blank to skip Akismet)' %>
+  <%= form.text_field :akismet_key, :input_html => { :class => "span7" } %>
+
+  <% Jabe::SETTINGS.akismet_url ||= root_url %>
+
+  <%= form.label :akismet_url, 'Akismet URL' %>
+  <%= form.text_field :akismet_url, :input_html => { :class => "span7" } %>
+
   <br><br>
 
   <%= form.submit 'Save', :class => 'btn btn-success' %>

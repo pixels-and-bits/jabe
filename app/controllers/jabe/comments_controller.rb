@@ -7,8 +7,10 @@ module Jabe
     helper_method :entry, :comment
 
     def create
+      comment.request = request
+      comment.permalink = public_entry_url(entry)
+
       if comment.save
-        comment.send_notification(request)
         redirect_to public_entry_url(entry), :notice => 'Your comment was submitted.'
       else
         flash[:error] = 'Unable to submit your comment.'

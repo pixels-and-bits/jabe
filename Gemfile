@@ -11,6 +11,7 @@ gem 'sanitize', '>= 2.0.0'
 gem 'devise', '>= 2.0.0'
 gem 'friendly_id', '>= 4.0.0'
 gem 'kaminari'
+gem 'rakismet', '>= 1.0.0'
 
 # gem 'bootstrap-sass',
 #   :git => 'git://github.com/pixels-and-bits/bootstrap-sass.git',

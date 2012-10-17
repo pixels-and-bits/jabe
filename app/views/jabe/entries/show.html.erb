@@ -20,7 +20,7 @@
       <h4>Comments</h4>
       <div class="comments">
         <% if entry.comments.any? %>
-          <% entry.comments.each do |comment| %>
+          <% entry.comments.approved.each do |comment| %>
             <div class="comment">
               <% if admin_signed_in? %>
                 <div class="delete">
@@ -40,13 +40,13 @@
               <% end %>
 
               <div class="author">
-                <%= comment.name %>
+                <%= comment.author %>
                 <span class="when">
                   <%= comment.created_at.to_s(:long) %>
                 </span>
               </div>
               <div class="body">
-                <%= comment.body.html_safe %>
+                <%= comment.content.html_safe %>
               </div>
             </div>
           <% end %>
@@ -65,20 +65,20 @@
     <div id="new_comment">
       <h4>Add a comment</h4>
       <%= form_for [entry, comment] do |form| %>
-        <%= form.label :name %>
-        <%= form.text_field :name %>
+        <%= form.label :author, 'Name' %>
+        <%= form.text_field :author %>
 
         <%= form.label :nickname %>
         <%= form.text_field :nickname %>
 
-        <%= form.label :email %>
-        <%= form.text_field :email, :label => 'Email (not shown to the public)' %>
+        <%= form.label :author_email, 'Email (not shown to the public)' %>
+        <%= form.text_field :author_email %>
 
-        <%= form.label :url, 'Website' %>
-        <%= form.text_field :url %>
+        <%= form.label :author_url, 'Website' %>
+        <%= form.text_field :author_url %>
 
-        <%= form.label :body, "Comment - Textile enabled (#{link_to 'Reference', 'http://redcloth.org/try-redcloth/', :target => '_blank'})".html_safe %>
-        <%= form.text_area :body %>
+        <%= form.label :content, "Comment - Textile enabled (#{link_to 'Reference', 'http://redcloth.org/try-redcloth/', :target => '_blank'})".html_safe %>
+        <%= form.text_area :content %>
 
         <br>
 
