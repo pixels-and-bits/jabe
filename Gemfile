@@ -8,6 +8,9 @@ gemspec
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
 gem 'sanitize', '>= 2.0.0'
+gem 'devise', '>= 2.0.0'
+gem 'friendly_id', '>= 4.0.0'
+gem 'kaminari'
 
 # gem 'bootstrap-sass',
 #   :git => 'git://github.com/pixels-and-bits/bootstrap-sass.git',
@@ -26,13 +29,6 @@ group :development, :test do
   gem 'rails', '3.2.8'
   gem 'jquery-rails'
   gem 'mysql2'
-  # gem 'sass-rails', '~> 3.2.0'
-
-  gem 'devise', '>= 2.0.0'
-  gem 'friendly_id', '>= 4.0.0'
-  gem 'kaminari'
-  gem 'simple_form', '>= 2.0.0rc'
-
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'launchy'
