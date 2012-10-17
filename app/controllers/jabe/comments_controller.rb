@@ -18,7 +18,12 @@ module Jabe
 
     def destroy
       comment.destroy
-      redirect_to entry_path(entry), :notice => 'Comment was deleted.'
+
+      if request.xhr?
+        render :nothing => true
+      else
+        redirect_to entry_path(entry), :notice => 'Comment was deleted.'
+      end
     end
 
     private

@@ -9,6 +9,19 @@ $(function() {
   }
 
   $('.dropdown-toggle').dropdown()
+
+  $('.comment_delete').click(function() {
+    var elem = $(this)
+    if (confirm(elem.data('confirm'))) {
+      $.ajax({
+        url: elem.attr('href'),
+        type: 'DELETE'
+      }).success(function() {
+        elem.closest('.comment').fadeOut()
+      })
+    }
+    return false
+  })
 });
 
 var JABE = function() {
