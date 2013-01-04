@@ -1,13 +1,14 @@
 PATH
   remote: .
   specs:
-    jabe (0.8.0)
+    jabe (0.9.0)
       RedCloth (>= 4.2.9)
       devise (>= 2.0.0)
       friendly_id (>= 4.0.0)
       gravtastic (>= 3.2.6)
       kaminari (>= 0.13.0)
       rails (>= 3.1.0)
+      rakismet (= 1.3.0)
       sanitize (>= 2.0.0)
 
 GEM
