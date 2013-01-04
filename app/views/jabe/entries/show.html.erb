@@ -20,7 +20,7 @@
       <h4>Comments</h4>
       <div class="comments">
         <% if entry.comments.any? %>
-          <% entry.comments.approved.each do |comment| %>
+          <% entry.comments.each do |comment| %>
             <div class="comment">
               <% if admin_signed_in? %>
                 <div class="delete">

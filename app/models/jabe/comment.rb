@@ -11,8 +11,8 @@ module Jabe
     attr_accessor :nickname, :request
 
     belongs_to :entry
-    default_scope :order => 'created_at ASC'
-    scope :approved, :conditions => { :spam => false }
+    default_scope :conditions => { :spam => false }, :order => 'created_at ASC'
+    scope :spam, :conditions => { :spam => true }
 
     before_validation :bot_check, :check_akismet, :sanitize
     validates_presence_of :author, :author_email, :content, :message => 'Required'
