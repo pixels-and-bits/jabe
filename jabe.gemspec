@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'kaminari', '>= 0.13.0'
   s.add_dependency 'RedCloth', '>= 4.2.9'
   s.add_dependency 'sanitize', '>= 2.0.0'
+  s.add_dependency 'rakismet', '1.3.0'
 
   s.add_development_dependency "sqlite3"
 end
