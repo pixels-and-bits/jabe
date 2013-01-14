@@ -18,6 +18,7 @@ Edit your Gemfile and add the required gems
 gem 'friendly_id', '>= 4.0.0'
 gem 'kaminari', '>= 0.13.0'
 gem 'sanitize', '>= 2.0.0'
+gem 'rakismet', '>= 1.0.0'
 </code></pre>
 
 From your rails root
